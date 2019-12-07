@@ -1,1 +1,0 @@
-# create-react-fullstack-app
