@@ -1,10 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# This project is a template to build a react fullstack application
+
+## how to use it?
+- step1: clone this project
+- step2: rename this project
+- step3: yarn intsall
+- step4: add your components in src->client->components
+- step5: add router with your components in src->client->config->router.ts
+- step6: yarn start (all creact-react-app scripts can use)
+
+## design pattern:  Atomic Design
+
+## installed-lists
+-   "@material-ui/core": "^4.7.1",
+-   "@material-ui/icons": "^4.5.1",
+-   "axios": "^0.19.0",
+-   "react": "^16.12.0",
+-   "react-dom": "^16.12.0",
+-   "react-router": "^5.1.2",
+-   "react-scripts": "3.3.0",
+-   "redux": "^4.0.4",
+-   "redux-saga": "^1.1.3",
+-   "typescript": "^3.7.3"
+-   "tslint": "^5.20.1"
+
 
 ## Available Scripts
+The project is expand from create-react-app
+So, in  directory, you can run:
 
-In the project directory, you can run:
-
-### `yarn start`
+### 
+yarn start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
