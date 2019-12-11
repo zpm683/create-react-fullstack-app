@@ -6,7 +6,7 @@
 - step3: yarn intsall
 - step4: add your components in src->client->components
 - step5: add router with your components in src->client->config->router.ts
-- step6: yarn start (all creact-react-app scripts can use)
+- step6: yarn start (all creact-react-app scripts can be used)
 
 ## design pattern:  Atomic Design
 
@@ -22,6 +22,14 @@
 -   "redux-saga": "^1.1.3",
 -   "typescript": "^3.7.3"
 -   "tslint": "^5.20.1"
+-   "typescript-fsa": "^3.0.0",
+-   "typescript-fsa-reducers": "^1.2.1",
+-   "typescript-fsa-redux-saga": "^2.0.0"
+-   "redux-persist": "^6.0.0",
+-   "react-swipeable-views": "^0.13.3",
+-   "i18next": "^19.0.1",
+-   "react-i18next": "^11.2.5",
+-   "react-lazyload": "^2.6.5",
 
 
 ## Available Scripts
