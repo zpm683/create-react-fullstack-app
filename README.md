@@ -1,11 +1,54 @@
 # This project is a template to build a react fullstack application
 
+## in the future, will create this app by cli！
+
+## project directory
+├─public
+└─src
+    ├─client
+    │  ├─common
+    │  │  ├─assets
+    │  │  │  └─img
+    │  │  ├─components
+    │  │  │  ├─atoms
+    │  │  │  ├─molecules
+    │  │  │  └─organisms
+    │  │  ├─config
+    │  │  ├─i18n
+    │  │  │  └─locales
+    │  │  └─utils
+    │  └─components
+    │      ├─errPage
+    │      │  ├─page
+    │      │  └─template
+    │      └─example       //demo
+    │          ├─page
+    │          ├─redux
+    │          │  ├─actions
+    │          │  ├─reducers
+    │          │  └─saga
+    │          └─template
+    │              ├─ButtonWithRedux
+    │              ├─ButtonWithSaga
+    │              ├─LinkWithRouter
+    │              └─TypographyWithI18n
+    │      └─example_pleaseRenameit     //standardized template
+    │          ├─page
+    │          ├─redux
+    │          │  ├─actions
+    │          │  ├─reducers
+    │          │  └─saga
+    │          └─template
+    └─services
+        ├─api
+        └─config
+
 ## how to use it?
 - step1: clone this project
 - step2: rename this project
 - step3: yarn intsall
 - step4: add your components in src->client->components
-- step5: add router with your components in src->client->config->router.ts
+- step5: add router with your components in src->client->config->routerList.tsx
 - step6: yarn start (all creact-react-app scripts can be used)
 
 ## design pattern:  Atomic Design
