@@ -5,43 +5,43 @@
 ## project directory
 ├─public  
 └─src  
-    ├─client  
-    │  ├─common  
-    │  │  ├─assets  
-    │  │  │  └─img  
-    │  │  ├─components  
-    │  │  │  ├─atoms  
-    │  │  │  ├─molecules  
-    │  │  │  └─organisms  
-    │  │  ├─config  
-    │  │  ├─i18n  
-    │  │  │  └─locales  
-    │  │  └─utils  
-    │  └─components  
-    │      ├─errPage  
-    │      │  ├─page  
-    │      │  └─template  
-    │      └─example       //demo  
-    │          ├─page  
-    │          ├─redux  
-    │          │  ├─actions  
-    │          │  ├─reducers  
-    │          │  └─saga  
-    │          └─template  
-    │              ├─ButtonWithRedux  
-    │              ├─ButtonWithSaga  
-    │              ├─LinkWithRouter  
-    │              └─TypographyWithI18n  
-    │      └─example_pleaseRenameit     //standardized template  
-    │          ├─page  
-    │          ├─redux  
-    │          │  ├─actions  
-    │          │  ├─reducers  
-    │          │  └─saga  
-    │          └─template  
-    └─services  
-        ├─api  
-        └─config  
+　　├─client  
+　　│  ├─common  
+　　│  │  ├─assets  
+　　│  │  │  └─img  
+　　│  │  ├─components  
+　　│  │  │  ├─atoms  
+　　│  │  │  ├─molecules  
+　　│  │  │  └─organisms  
+　　│  │  ├─config  
+　　│  │  ├─i18n  
+　　│  │  │  └─locales  
+　　│  │  └─utils  
+　　│  └─components  
+　　│      ├─errPage  
+　　│      │  ├─page  
+　　│      │  └─template  
+　　│      └─example       //demo  
+　　│          ├─page  
+　　│          ├─redux  
+　　│          │  ├─actions  
+　　│          │  ├─reducers  
+　　│          │  └─saga  
+　　│          └─template  
+　　│              ├─ButtonWithRedux  
+　　│              ├─ButtonWithSaga  
+　　│              ├─LinkWithRouter  
+　　│              └─TypographyWithI18n  
+　　│      └─example_pleaseRenameit     //standardized template  
+　　│          ├─page  
+　　│          ├─redux  
+　　│          │  ├─actions  
+　　│          │  ├─reducers  
+　　│          │  └─saga  
+　　│          └─template  
+　　└─services  
+　　　　├─api  
+　　　　└─config  
 
 ## how to use it?
 - step1: clone this project
