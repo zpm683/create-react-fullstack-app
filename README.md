@@ -21,7 +21,7 @@
 　　│      ├─errPage  
 　　│      │  ├─page  
 　　│      │  └─template  
-　　│      └─example       //demo  
+　　│      └─example　　　　//demo  
 　　│          ├─page  
 　　│          ├─redux  
 　　│          │  ├─actions  
@@ -32,7 +32,7 @@
 　　│              ├─ButtonWithSaga  
 　　│              ├─LinkWithRouter  
 　　│              └─TypographyWithI18n  
-　　│      └─example_pleaseRenameit     //standardized template  
+　　│      └─example_pleaseRenameit　　　　//standardized template  
 　　│          ├─page  
 　　│          ├─redux  
 　　│          │  ├─actions  
