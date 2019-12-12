@@ -1,8 +1,3 @@
-/**
- * APP
- * @author FXS)zhang.puming
- */
-
 import React from "react";
 import WebRouter from "./router";
 import { Provider } from "react-redux";
