@@ -50,7 +50,7 @@
 - step4: add your components in src->client->components
 - step5: add router with your components in src->client->config->routerList.tsx
 - step6: yarn start (all creact-react-app scripts can be used)
-- (in step3 if you get a ERR:UNABLE_TO_VERIFY_LEAF_SIGNATURE, then you need to run this in terminal: yarn config set strict-ssl false)
+#### (in step3 if you get a ERR:UNABLE_TO_VERIFY_LEAF_SIGNATURE, then you need to run this in terminal: yarn config set strict-ssl false)
 ## design pattern:  Atomic Design
 
 ## installed-lists
