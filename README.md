@@ -46,7 +46,9 @@
 ## how to use it?
 - step1: clone this project
 - step2: rename this project
-- step3: yarn intsall
+- step3: yarn intsall　　
+(in step3 if you get a ERR:UNABLE_TO_VERIFY_LEAF_SIGNATURE, then you need to run this in terminal: 
+   yarn config set strict-ssl false)
 - step4: add your components in src->client->components
 - step5: add router with your components in src->client->config->routerList.tsx
 - step6: yarn start (all creact-react-app scripts can be used)
