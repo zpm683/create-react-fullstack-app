@@ -1,7 +1,5 @@
 # This project is a template to build a react fullstack application
 
-## in the future, will create this app by cli！
-
 ## project directory
 ├─public  
 └─src  
