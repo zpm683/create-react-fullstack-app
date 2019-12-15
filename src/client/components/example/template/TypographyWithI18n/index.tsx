@@ -1,57 +1,15 @@
-import React, { useState } from "react";
-import Container from "@material-ui/core/Container";
-import Divider from "@material-ui/core/Divider";
-import ButtonWithRedux from "./ButtonWithRedux";
-import ButtonWithSaga from "./ButtonWithSaga";
-import LinkWithRouter from "./LinkWithRouter";
-import TypographyWithI18n from "./TypographyWithI18n";
-import { IExampleStoreState } from "../redux/reducers";
-import { IExampleActions } from "../redux/actions";
-import { getRandomNumber } from "../../../common/utils"
-
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import { useTranslation } from "react-i18next";
+import { TEXT } from "../../../../common/i18n/keys";
 
 interface IOwnProps {}
-type ExampleProps = IOwnProps & IExampleActions & IExampleStoreState;
+type TypographyWithI18nProps = IOwnProps;
 
-export default function Example(props: ExampleProps) {
+export default function TypographyWithI18n(props: TypographyWithI18nProps) {
 
-  //!!best way is used redux to wetch the inputData
-  const [inputData, changeInputData] = useState("");
-
-  function toChangeTitle() {
-    props.changeButtonTitle(`${getRandomNumber()}`);
-  }
-
-  React.useEffect(()=>{
-    console.log("1")
-  },[props.titleString])
-
-  function toCallSagaApi() {
-    props.doPostDataWithSaga({ data: inputData });
-  }
-
+  const { t } = useTranslation();
   return (
-    <Container>
-      <br/>
-      <TypographyWithI18n />
-      <br/>
-      <Divider />
-      <br/>
-      <ButtonWithRedux onClick={toChangeTitle} title={props.titleString} />
-      <br/><br/>
-      <Divider />
-      <br/>
-      <ButtonWithSaga
-        onClick={toCallSagaApi}
-        data={inputData}
-        onChange={(e: any) => {
-          changeInputData(e.target.value);
-        }}
-      />
-      <br/>
-      <Divider />
-      <br/>
-      <LinkWithRouter />
-    </Container>
+  <Typography>{`this text is used i18n: ${t(TEXT.HELLO)}`}</Typography>
   );
 }

@@ -30,16 +30,18 @@
 　　│　　　　　　　├─ButtonWithSaga  
 　　│　　　　　　　├─LinkWithRouter  
 　　│　　　　　　　└─TypographyWithI18n  
-　　│　　　└─example_pleaseRenameit　　　　//standardized template  
+　　└─services  
+　　　　├─api  
+　　　　└─config  
+
+## standardized template
+　　│　　　└─example_pleaseRenameit  
 　　│　　　　├─page  
 　　│　　　　├─redux  
 　　│　　　　│　├─actions  
 　　│　　　　│　├─reducers  
 　　│　　　　│　└─saga  
 　　│　　　　└─template  
-　　└─services  
-　　　　├─api  
-　　　　└─config  
 
 ## how to use it?
 - step1: clone this project
