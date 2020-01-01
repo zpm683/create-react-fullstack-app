@@ -25,6 +25,7 @@
     "@types/react-redux": "latest",
     "@types/react-router": "latest",
     "@types/react-swipeable-views": "latest",
+    "react-swipeable-views-utils": "latest",
     "axios": "latest",
     "history": "latest",
     "i18next": "latest",
