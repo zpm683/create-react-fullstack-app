@@ -51,28 +51,6 @@
 
 ## design pattern:  material-design
 
-## installed-lists
--   "@material-ui/core": "^4.7.1",
--   "@material-ui/icons": "^4.5.1",
--   "axios": "^0.19.0",
--   "react": "^16.12.0",
--   "react-dom": "^16.12.0",
--   "react-router": "^5.1.2",
--   "react-scripts": "3.3.0",
--   "redux": "^4.0.4",
--   "redux-saga": "^1.1.3",
--   "typescript": "^3.7.3"
--   "tslint": "^5.20.1"
--   "typescript-fsa": "^3.0.0",
--   "typescript-fsa-reducers": "^1.2.1",
--   "typescript-fsa-redux-saga": "^2.0.0"
--   "redux-persist": "^6.0.0",
--   "react-swipeable-views": "^0.13.3",
--   "i18next": "^19.0.1",
--   "react-i18next": "^11.2.5",
--   "react-lazyload": "^2.6.5",
-
-
 ## Available Scripts
 The project is expand from create-react-app
 So, in  directory, you can run:

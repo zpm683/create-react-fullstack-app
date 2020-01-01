@@ -7,9 +7,12 @@ declare module "*.gif";
 declare module "*.bmp";
 declare module "*.tiff";
 
+declare module "wangeditor"
+
 declare module "react-swipeable-views-utils" {
   const content: {
     autoPlay: Function;
   };
   export = content;
 }
+

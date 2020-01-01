@@ -7,7 +7,7 @@ import { RouteComponentProps } from "react-router";
 // TODO: import your component
 import Example from "../../components/example/page/index";
 // import Xxxx from "../../components/Xxxx/xxxx";
-import { NotFound404 } from "../../components/errPage/page";
+import NotFound404  from "../../common/components/ErrPage/404";
 
 
 /**

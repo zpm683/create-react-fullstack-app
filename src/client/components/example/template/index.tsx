@@ -4,6 +4,7 @@ import Divider from "@material-ui/core/Divider";
 import ButtonWithRedux from "./ButtonWithRedux";
 import ButtonWithSaga from "./ButtonWithSaga";
 import LinkWithRouter from "./LinkWithRouter";
+import Editer from "../../../common/components/Editer";
 import TypographyWithI18n from "./TypographyWithI18n";
 import { IExampleStoreState } from "../redux/reducers";
 import { IExampleActions } from "../redux/actions";
@@ -48,6 +49,9 @@ export default function Example(props: ExampleProps) {
       <Divider />
       <br/>
       <LinkWithRouter />
+      <br/>
+      <br/>
+      <Editer/>
     </Container>
   );
 }

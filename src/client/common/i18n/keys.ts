@@ -8,9 +8,11 @@
 export interface ILocalesKeys {
     //TODO: add other keywords
     readonly HELLO: string;
+    readonly UPLOAD: string;
 }
 
 export const TEXT: ILocalesKeys = {
     HELLO:"HELLO",
+    UPLOAD:"UPLOAD"
 };
   

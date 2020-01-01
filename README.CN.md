@@ -29,10 +29,10 @@
 * typescript  语言
 * typescript-fsa  Typescript国际准则
 * tslint  代码风格检查
-* typedoc 文档自动生成
-* babel  ES6-->ES5
-* storybook  组件展示
-* enzyme  组件自动化测试
-* gulp  自动化构建脚本
+* babel  ES6-->ES5　　
+* wangeditor 富文本编辑
 * jest  代码自动化测试
-
+* typedoc 文档自动生成　// 未来
+* enzyme  组件自动化测试　// 未来
+* gulp  自动化构建脚本 // 未来
+* storybook  组件展示 // No
