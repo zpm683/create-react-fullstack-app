@@ -13,9 +13,6 @@
 　　│　│  │  └─locales  
 　　│　│  └─utils  
 　　│　└─components  
-　　│　　　├─errPage  
-　　│　　　│  ├─page  
-　　│　　　│  └─template  
 　　│　　　└─example　　　　//demo  
 　　│　　　　　　├─page  
 　　│　　　　　　├─redux  
@@ -32,7 +29,7 @@
 　　　　└─config  
 
 ## standardized template
-　　│　　　└─example_pleaseRenameit  
+　　│　　　└─example  
 　　│　　　　├─page  
 　　│　　　　├─redux  
 　　│　　　　│　├─actions  
