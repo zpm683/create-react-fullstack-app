@@ -1,7 +1,14 @@
 {
   "name": "create-react-fullstack-app",
   "version": "1.0.0",
-  "private": true,
+  "author": "zpm683",
+  "repository": "https://github.com/zpm683/create-react-fullstack-app.git",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
@@ -39,12 +46,6 @@
     "typescript-fsa-redux-saga": "latest",
     "wangeditor": "latest"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -59,6 +60,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {}
+  }
 }
