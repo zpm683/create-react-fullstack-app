@@ -6,7 +6,7 @@
   "repository": "https://github.com/zpm683/create-react-fullstack-app.git",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env PUBLIC_URL=/ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -27,6 +27,7 @@
     "@types/react-swipeable-views": "latest",
     "react-swipeable-views-utils": "latest",
     "axios": "latest",
+    "cross-env": "latest",
     "history": "latest",
     "i18next": "latest",
     "npm": "^6.13.4",
