@@ -4,9 +4,14 @@ import { createBrowserHistory } from "history";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "./theme";
-import { routerConfig, BASE_URL } from "./common/config/routerList";
+
+// TODO: import your component
+import Example from "./components/example/page";
+import NotFound404  from "./common/components/ErrPage/404";
+
 const history = createBrowserHistory();
 
+const BASE_URL = "/";
 export default () => {
   return (
     <div>
@@ -14,16 +19,9 @@ export default () => {
       <MuiThemeProvider theme={theme}>
         <Router history={history}>
           <Switch>
-            { routerConfig.map((oneRooter, index) => {
-              return (
-                <Route
-                  key={index}
-                  exact={oneRooter.exact}
-                  path={oneRooter.path}
-                  component={oneRooter.component}
-                />
-              );
-            })}
+            <Route exact path={`${BASE_URL}`} component={Example}/>
+            <Route  path={`${BASE_URL}example`} component={Example}/>
+            <Route  path={`${BASE_URL}404NotFound`} component={NotFound404}/>
             <Redirect exact to={`${BASE_URL}404NotFound`} />
           </Switch>
         </Router>
