@@ -1,51 +1,83 @@
-# This project is a template to build a react fullstack application
+# 欢迎使用React全栈脚手架TS版  （by 下午茶溢栈） 
+## 本脚手架可以让你专注于业务组件的开发,而不在周边配置上浪费过多时间
+## 本脚手是基于create-react-app的二次开发脚手架
+## 目录结构为基于中/大型应用自行设计
 
-## project directory
-├─public  
-└─src  
-　　├─client  
-　　│　├─common  
-　　│　│  ├─assets  
-　　│　│  │  └─img  
-　　│　│  ├─components  
-　　│　│  ├─config  
-　　│　│  ├─i18n  
-　　│　│  │  └─locales  
-　　│　│  └─utils  
-　　│　└─components  
-　　│　　　└─example　　　　//demo  
-　　│　　　　　　├─page  
-　　│　　　　　　├─redux  
-　　│　　　　　　│  ├─actions  
-　　│　　　　　　│  ├─reducers  
-　　│　　　　　　│  └─saga  
-　　│　　　　　　└─template  
-　　│　　　　　　　├─ButtonWithRedux  
-　　│　　　　　　　├─ButtonWithSaga  
-　　│　　　　　　　├─LinkWithRouter  
-　　│　　　　　　　└─TypographyWithI18n  
-　　└─services  
-　　　　├─api  
-　　　　└─config  
+---
+## 结构说明
+├─.storybook　　//storybook配置  
+├─public　　//CRA默认  
+└─src　　//CRA默认源码目录  
+    ├─app　　//业务工程目录  
+    │  ├─common　　//公共目录  
+    │  │  ├─@types　　//公共接口定义  
+    │  │  ├─assets　　//公共资源文件  
+    │  │  │  ├─doc  
+    │  │  │  ├─img  
+    │  │  │  └─json  
+    │  │  ├─components　　//公共组件  
+    │  │  ├─config　　//公共配置  
+    │  │  ├─hooks　　//公共Hooks  
+    │  │  ├─i18n　　//国际化  
+    │  │  │  └─locales  
+    │  │  ├─middlewares　　//中间件  
+    │  │  └─utils　　//工具集  
+    │  ├─login　　//具体业务（Demo）  
+    │  │  ├─@types　　//具体业务接口定义  
+    │  │  ├─assets　　//该业务所需资源  
+    │  │  │  └─img  
+    │  │  ├─components　　//该业务组件  
+    │  │  ├─config　　//该业务配置项  
+    │  │  ├─redux　　//该业务redux（RTK）  
+    │  │  └─service　　//该业务服务层  
+    │  │      ├─api　　//api  
+    │  │      └─tools　　//纯数据处理工具  
 
-## standardized template
-　　│　　　└─example  
-　　│　　　　├─page  
-　　│　　　　├─redux  
-　　│　　　　│　├─actions  
-　　│　　　　│　├─reducers  
-　　│　　　　│　└─saga  
-　　│　　　　└─template  
+    ├─lib　　//全工程通用目录（长期积累）  
+    │  ├─@types　　//通用接口  
+    │  ├─components　　//通用组件  
+    │  │  ├─ErrPage  
+    │  │  ├─Infomation  
+    │  │  ├─ListItemWithIcon  
+    │  │  └─SettingList  
+    │  ├─config　　//通用设定  
+    │  ├─hooks　　//通用hooks  
+    │  ├─middlewares　　//通用中间件  
+    │  └─utils　　//通用工具集  
+    ├─stories　　//storybook工程目录  
+    └─__tests__　　//工程测试目录  
+        ├─app　　//app工程测试目录  
+        └─lib　　//lib工程测试目录  
 
-## how to use it?
-- step1: clone this project
-- step2: rename this project
-- step3: yarn intsall　　
-- step4: add your components in src->client->components
-- step5: yarn start (all creact-react-app scripts can be used)
-#### (in step3 if you get a ERR:UNABLE_TO_VERIFY_LEAF_SIGNATURE, then you need to run this in terminal: yarn config set strict-ssl false)
+## 如何使用?
+- step1: clone源代码
+- step2: 重命名
+- step3: yarn intsall
+- step4: 在src->app层级添加新代码
+- step5: yarn start
+- （可选）step6: yarn storybook  
 
-## design pattern:  material-design
+## 已经集成的技术有:  
+
+* react  核心前端框架
+* redux  状态管理
+* @reduxjs/toolkit  redux速成工具
+* react-router-dom 路由管理
+* react-query 远程数据fetch框架
+* material-ui  UI框架
+* react-lazyload  组件懒加载
+* react-swipeable-views  看板模块
+* redux-persist  数据持久化
+* i18next  国际化
+* axios  服务器异步交互
+* typescript  语言
+* tslint  代码风格检查
+* darft.js 富文本编辑框架 //未来
+* jest  代码自动化测试
+* enzyme  组件自动化测试
+* storybook  组件展示
+* react-scripts  启动脚本
+* react-use  一个开源的Hook库
 
 ## Available Scripts
 The project is expand from create-react-app
