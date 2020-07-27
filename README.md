@@ -5,6 +5,7 @@
 
 ---
 ## 结构说明
+```
 ├─.storybook　　//storybook配置  
 ├─public　　//CRA默认  
 └─src　　//CRA默认源码目录  
@@ -47,6 +48,7 @@
     └─__tests__　　//工程测试目录  
         ├─app　　//app工程测试目录  
         └─lib　　//lib工程测试目录  
+```
 
 ## 如何使用?
 - step1: clone源代码
