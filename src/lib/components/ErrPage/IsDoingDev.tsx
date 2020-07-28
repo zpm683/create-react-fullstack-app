@@ -26,7 +26,7 @@ export const IsDoingDev: React.FC<Props> = () => {
   return (
     <Paper className={classes.root}>
       <Typography variant="h5" component="h3">
-        未実装
+        开发中
       </Typography>
       <br />
       <Link
@@ -35,7 +35,7 @@ export const IsDoingDev: React.FC<Props> = () => {
           history.goBack();
         }}
       >
-        戻る
+        返回
       </Link>
     </Paper>
   );
