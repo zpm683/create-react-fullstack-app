@@ -22,3 +22,20 @@ export function useOnline() {
   });
   return isOnline;
 }
+
+/**
+ * 缓存值
+ * @param value 缓存值
+ * @example
+ *   function Counter() {
+ *     const [count, setCount] = useState(0);
+ *     const prevCount = usePrevious(count);
+ *   }
+ */
+export function usePrevious(value: any): any {
+  const ref = useRef(null);
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+}
