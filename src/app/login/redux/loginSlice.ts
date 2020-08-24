@@ -1,23 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState, AppThunk } from "../../store";
+import { RootState, AppThunk } from "../../../store";
 import { callLoginApi } from "../service/api/loginApi";
-import { ILoginInfo } from "login.params";
-import { RequestData } from "login.api.loginApi";
-import { LoadingState } from "lib.loading";
+import { LoginInfo } from "login.params";
+import { RequestData, ResponseData } from "login.api.loginApi";
+import { withLoading } from "../../../common";
 
 interface ILoginStoreState {
-  loadingState: LoadingState;
-  loginInfo: ILoginInfo;
-  isLogined: boolean;
+  loginInfo: LoginInfo;
   token: string;
 }
 
 const initialState: ILoginStoreState = {
-  loadingState: {
-    isLoading: false,
-    errMsg:""
-  },
-  isLogined: false,
   loginInfo: {
     password: "",
     userId: "",
@@ -29,56 +22,37 @@ const loginSlice = createSlice({
   name: "login",
   initialState,
   reducers: {
-    /** setIsLoading */
-    setLoadingState(state, action: PayloadAction<LoadingState>) {
-      state.loadingState = action.payload;
-    },
-
     /** saveLoginInfo */
-    saveLoginInfo(state, action: PayloadAction<ILoginInfo>) {
+    saveLoginInfo(state, action: PayloadAction<LoginInfo>) {
       state.loginInfo = action.payload;
     },
-    /** changLoginState */
-    setLoginState(state, action: PayloadAction<boolean>) {
-      state.isLogined = action.payload;
-      state.loadingState = {
-        isLoading: false,
-        errMsg:""
-      };
+    /** setToken */
+    setToken(state, action: PayloadAction<string>) {
+      state.token = action.payload;
+    },
+    /** setToken */
+    cleanToken(state) {
+      state.token = "";
     },
   },
 });
 
 export const selectLoginInfo = (state: RootState) => state.login.loginInfo;
-export const selectIsLogined = (state: RootState) => state.login.isLogined;
-export const selectLoadingState = (state: RootState) => state.login.loadingState;
+export const selectToken = (state: RootState) => state.login.token;
 
 export const loginActions = loginSlice.actions;
 export const loginReducer = loginSlice.reducer;
 
-export const doLoginApi = (params: RequestData): AppThunk => async (
-  dispatch
-) => {
-  try {
-    dispatch(loginActions.setLoadingState({
-      isLoading: true,
-      errMsg:""
-    }));
-    const result = await callLoginApi(params);
-    if (result) {
-      setTimeout(() => {
-        dispatch(loginActions.setLoginState(true));
-      }, 1000);
-    } else {
-      dispatch(loginActions.setLoadingState({
-        isLoading: false,
-        errMsg:"ログインできませんでした"
-      }));
+export const doLoginApi = (params: RequestData): AppThunk =>
+  withLoading<ResponseData>(
+    async (dispatch, getState) => {
+      return await callLoginApi(params);
+    },
+    (result, dispatch, getState) => {
+      console.log(`result${result}`);
+      dispatch(loginActions.setToken("test Token"));
+    },
+    (dispatch, getState) => {
+      console.log(getState().common.loading.errMsg);
     }
-  } catch (err) {
-    dispatch(loginActions.setLoadingState({
-      isLoading: false,
-      errMsg:"ログインできませんでした"
-    }));
-  }
-};
+  );
