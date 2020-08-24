@@ -1,8 +1,3 @@
-/**
- * ログインパネル
- *  
- */
-
 import React, { useState } from "react";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -16,14 +11,8 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import IMG_LOGO from "../assets/img/logo.png";
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-// import { useQuery } from "react-query";
-import {
-  selectIsLogined,
-  selectLoginInfo,
-  doLoginApi,
-  selectLoadingState,
-} from "../redux/loginSlice";
-import { AppPaths } from "../../common";
+import { selectToken, selectLoginInfo, loginActions, doLoginApi } from "../redux/loginSlice";
+import { AppPaths, selectLoading } from "../../../common";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -45,21 +34,20 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function LoginPanel() {
   const classes = useStyles();
   const loginInfo = useSelector(selectLoginInfo);
-  const loadingState = useSelector(selectLoadingState);
-  const isLogined = useSelector(selectIsLogined);
+  const { errMsg, isLoading } = useSelector(selectLoading);
+  const token = useSelector(selectToken);
   const [userId, changeUserId] = useState(loginInfo.userId);
   const [password, changePassword] = useState(loginInfo.password);
   const [openSnackbar, setOpenSnackbar] = React.useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
-  // const { isLoading, isError, data, error } = useQuery('todos', fetchTodoList)
 
   React.useEffect(() => {
-    if (isLogined === true) {
-      history.push(AppPaths.MENU);
+    if (token !== "") {
+      history.push(AppPaths.MAINMENU);
     }
     // tslint:disable-next-line:align
-  }, [isLogined, history]);
+  }, [token]);
 
   function inputChecker() {
     if (userId.length !== 0 && password.length !== 0) {
@@ -74,12 +62,12 @@ export default function LoginPanel() {
       dispatch(doLoginApi({ user: userId, pass: password }));
       // doLoginAction({ userId, password });
     } else {
-      alert("格式不正确");
+      alert("密码不正确");
     }
   }
 
   function doEnter(keyCode: number) {
-    if (keyCode !== 13) return;
+    if (keyCode != 13) return;
     doLogin();
   }
 
@@ -91,23 +79,18 @@ export default function LoginPanel() {
   };
 
   React.useEffect(() => {
-    if (loadingState.errMsg !== "") {
+    if (errMsg !== "") {
       setOpenSnackbar(true);
     } else {
       setOpenSnackbar(false);
     }
-  }, [loadingState]);
+  }, [errMsg]);
 
+  console.log("render LoginPanel");
   return (
     <>
       <Card className={classes.card}>
-        <CardMedia
-          component="img"
-          alt="FUJITSU"
-          image={IMG_LOGO}
-          title="FUJITSU"
-          className={classes.media}
-        />
+        <CardMedia component="img" alt="FUJITSU" image={IMG_LOGO} title="FUJITSU" className={classes.media} />
         <CardContent>
           <TextField
             className={classes.textField}
@@ -134,7 +117,7 @@ export default function LoginPanel() {
             component="button"
             variant="body2"
             onClick={() => {
-              alert("Click-Test:忘记密码");
+              alert("Click-Test");
             }}
           >
             忘记密码
@@ -145,7 +128,7 @@ export default function LoginPanel() {
             component="button"
             variant="body2"
             onClick={() => {
-              alert("Click-Test:登録");
+              alert("Click-Test");
             }}
           >
             注册
@@ -160,7 +143,7 @@ export default function LoginPanel() {
             onClick={doLogin}
             onKeyPress={(e) => doEnter(e.which)}
           >
-            {loadingState.isLoading ? "登录中 ..." : "登录"}
+            {isLoading ? "登录中 ..." : "登录"}
           </Button>
         </CardActions>
       </Card>
@@ -169,7 +152,7 @@ export default function LoginPanel() {
         open={openSnackbar}
         autoHideDuration={6000}
         onClose={handleClose}
-        message={loadingState.errMsg}
+        message={errMsg}
       />
     </>
   );
