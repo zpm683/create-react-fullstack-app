@@ -1,12 +1,89 @@
-## lifemark-sx-web
+### 欢迎使用 React 全栈脚手架 TS 版 （by 下午茶溢栈）
 
-### .env.development
+- 本脚手架可以让你专注于业务组件的开发,而不在周边配置上浪费过多时间
+- 本脚手架基于 create-react-app 二次开发
+- 目录结构为基于中/大型应用自行设计
 
-### .env.production
+---
 
-### src 構築の説明
+## 结构说明
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```
+├─.storybook　　//storybook配置
+├─.vscode　　//vscode配置
+├─public　　//静态资源包
+├─.env.development　　//开发环境专用环境变量
+├─.env.production　　//生产环境专用环境变量
+├─.env.test　　//测试环境专用环境变量
+├─.gitignore　　//git遗忘文件配置
+├─.prettierrc　　//代码风格配置
+├─.package.json　　//环境依赖
+├─README.md　　//须知
+├─tsconfig.json　　//TS配置
+├─yarn.lock　　//环境依赖版本锁
+└─src　　//默认工程源码目录
+    ├─app　　//业务源码目录
+    │  ├─common　　//公共目录
+    │  │  ├─@types　　//公共接口定义
+    │  │  ├─assets　　//公共资源文件
+    │  │  │  ├─doc
+    │  │  │  ├─img
+    │  │  │  └─json
+    │  │  ├─components　　//公共组件
+    │  │  ├─config　　//公共配置
+    │  │  ├─hooks　　//公共Hooks
+    │  │  ├─i18n　　//国际化
+    │  │  │  └─locales
+    │  │  ├─middlewares　　//中间件
+    │  │  └─utils　　//工具集
+    │  ├─login　　//具体业务（Demo）
+    │  │  ├─@types　　//具体业务接口定义
+    │  │  ├─assets　　//该业务所需资源
+    │  │  │  └─img
+    │  │  ├─components　　//该业务组件
+    │  │  ├─config　　//该业务配置项
+    │  │  ├─redux　　//该业务redux（RTK）
+    │  │  └─service　　//该业务服务层
+    │  │      ├─api　　//api
+    │  │      └─tools　　//纯数据处理工具
+    ├─stories　　//工程storybook目录
+    └─__tests__　　//工程测试目录
+
+```
+
+## 如何使用?
+
+- step1: clone 源代码
+- step2: 重命名
+- step3: yarn intsall
+- step4: 在 src->app 层级添加新代码
+- step5: yarn start
+- （可选）step6: yarn storybook
+
+## 已经集成的核心技术有:
+
+- react 核心前端框架
+- redux 状态管理
+- @reduxjs/toolkit redux 速成工具
+- react-router-dom 路由管理
+- react-query 远程数据 fetch 框架
+- material-ui UI 框架
+- redux-persist 数据持久化
+- i18next 国际化
+- axios 服务器异步交互
+- typescript 语言
+- prettier/eslint 代码风格检查
+- jest 代码自动化测试
+- @testing-library/\* 组件自动化测试
+- storybook 组件展示
+- react-scripts 启动脚本
+- react-use 一个开源的 Hook 库
+- react-color 颜色选择库
+- immutable 数据优化
+- immutable 数据优化
+- (未来)puppeteer e2e 测试
+
+## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
