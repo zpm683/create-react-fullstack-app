@@ -1,19 +1,17 @@
-import { SEVER_CONFIG } from "./severConfig";
+import { ProcessEnvUtils } from "../utils/ProcessEnvUtils";
 
 /**
- * App链接配置
+ * AppPaths
  */
-// TODO:加入更多链接
 export class AppPaths {
-  /** 根 */
-  static readonly ROOT = SEVER_CONFIG.baseURL;
+  /** root path */
+  static readonly ROOT = ProcessEnvUtils.getBaseURL();
 
   /** login */
   static readonly LOGIN = `${AppPaths.ROOT}login`;
 
-  /** menu */
-  static readonly MENU = `${AppPaths.ROOT}menu`;
+  /** isDeving */
+  static readonly ISDEVING = `${AppPaths.ROOT}isDeving`;
 
-    /** deving */
-    static readonly DEVING = `${AppPaths.ROOT}deving`;
+  // TODO: add more path
 }

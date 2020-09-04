@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState, AppThunk } from "../../../store";
+import { RootState, AppThunk } from "../../store";
 import { callLoginApi } from "../service/api/loginApi";
 import { LoginInfo } from "login.params";
 import { RequestData, ResponseData } from "login.api.loginApi";
-import { withLoading } from "../../../common";
+import { withLoading } from "../../common";
 
 interface ILoginStoreState {
   loginInfo: LoginInfo;
@@ -40,7 +40,7 @@ const loginSlice = createSlice({
 export const selectLoginInfo = (state: RootState) => state.login.loginInfo;
 export const selectToken = (state: RootState) => state.login.token;
 
-export const loginActions = loginSlice.actions;
+export const { cleanToken, saveLoginInfo, setToken } = loginSlice.actions;
 export const loginReducer = loginSlice.reducer;
 
 export const doLoginApi = (params: RequestData): AppThunk =>
@@ -49,10 +49,10 @@ export const doLoginApi = (params: RequestData): AppThunk =>
       return await callLoginApi(params);
     },
     (result, dispatch, getState) => {
-      console.log(`result${result}`);
-      dispatch(loginActions.setToken("test Token"));
+      console.log(`result${JSON.stringify(result)}`);
+      dispatch(setToken(result.token));
     },
     (dispatch, getState) => {
       console.log(getState().common.loading.errMsg);
-    }
+    },
   );

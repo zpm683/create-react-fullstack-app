@@ -4,7 +4,7 @@
 declare module "login.params" {
   export type UserId = string;
   export type Password = string;
-  export type ILoginInfo = {
+  export type LoginInfo = {
     userId: UserId;
     password: Password;
   };

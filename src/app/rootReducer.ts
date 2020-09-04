@@ -1,14 +1,13 @@
 /**
- * V3の RootReducer
- *  
+ * root-reducer
+ * @see https://redux.js.org/
  */
-
-import { combineReducers } from "redux";
+import { combineReducers } from "@reduxjs/toolkit";
+import { commonReducer } from "./common";
 import { loginReducer } from "./login";
 
-// TODO:add Reducer
 export const rootReducer = combineReducers({
-  login: loginReducer
+  common: commonReducer,
+  login: loginReducer,
+  // TODO:add Reducer
 });
-
-export type RootReducer = ReturnType<typeof rootReducer>;

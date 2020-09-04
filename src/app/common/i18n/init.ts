@@ -1,11 +1,7 @@
-/**
- * 多语言
- *  
- */
 import i18n, { Resource } from "i18next";
 import { initReactI18next } from "react-i18next";
 
-// 多语言文件
+// language files
 import enUS from "./locales/en-US";
 import jaJp from "./locales/ja-JP";
 import zhCN from "./locales/zh-CN";
@@ -16,12 +12,12 @@ const resources: Resource = {
   "zh-CN": { translation: zhCN },
 };
 
-// i18nの設定
+// set i18n
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: "zh-CN",
+    lng: navigator.language,
 
     keySeparator: false, // we do not use keys in form messages.welcome
 

@@ -1,10 +1,11 @@
-import { AppThunk } from "../../../store";
+import { AppThunk } from "../../store";
 import { cleanErrMsg, setIsLoading, setErrMsg } from "../redux";
 type AppThunkDispatch = Parameters<AppThunk>[0];
 type AppThunkStore = Parameters<AppThunk>[1];
 
 /**
  * withLoading
+ * 
  * @param asyncCommand
  * @param onSuccess
  * @param onFailure
@@ -24,25 +25,31 @@ type AppThunkStore = Parameters<AppThunk>[1];
   );
  */
 export function withLoading<T>(
-  asyncCommand: (dispatch: AppThunkDispatch, getStates: AppThunkStore) => Promise<T>,
-  onSuccess: (result: T, dispatch: AppThunkDispatch, getStates: AppThunkStore) => void = () => {},
-  onFailure: (dispatch: AppThunkDispatch, getStates: AppThunkStore) => void = () => {}
+  asyncCommand: (
+    dispatch: AppThunkDispatch,
+    getStates: AppThunkStore,
+  ) => Promise<T>,
+  onSuccess: (
+    result: T,
+    dispatch: AppThunkDispatch,
+    getStates: AppThunkStore,
+  ) => void = () => {},
+  onFailure: (
+    dispatch: AppThunkDispatch,
+    getStates: AppThunkStore,
+  ) => void = () => {},
 ): AppThunk {
   return async (dispatch, getState) => {
     try {
       dispatch(cleanErrMsg());
       dispatch(setIsLoading(true));
       const result = await asyncCommand(dispatch, getState);
+      dispatch(setIsLoading(false));
       if (result) {
-        setTimeout(() => {
-          onSuccess(result, dispatch, getState);
-          dispatch(setIsLoading(false));
-        }, 1000);
+        onSuccess(result, dispatch, getState);
       } else {
-        setTimeout(() => {
-          onFailure(dispatch, getState);
-          dispatch(setErrMsg("result Err"));
-        }, 1000);
+        onFailure(dispatch, getState);
+        dispatch(setErrMsg("result Err"));
       }
     } catch (error) {
       onFailure(dispatch, getState);
