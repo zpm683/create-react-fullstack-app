@@ -1,5 +1,5 @@
 /**
- * 文字列ユーティリティクラス
+ * StringUtils
  */
 export class StringUtils {
   /**

@@ -1,5 +1,5 @@
 /**
- * アプリ環境依存ユーティリティクラス
+ * ProcessEnvUtils
  */
 export class ProcessEnvUtils {
   /**
@@ -53,58 +53,17 @@ export class ProcessEnvUtils {
   static getApiTimeout() {
     return _getNumber(process.env.REACT_APP_API_TIMEOUT);
   }
-
-  /**
-   * コンテキストルートパスを取得します。
-   */
-  static getContextPath(): string {
-    // 現在のパスのルートから1レベルまでをコンテキストルートパスとして使用する
-    //   ex) /lifemark/karte/xx → /lifemark
-    return this.isProduction()
-      ? window.location.pathname.replace(/^((\/([^/]*)){1}).*$/, "$1")
-      : "";
-  }
-
-  /**
-   * アプリケーションルートパスを取得します。
-   */
-  static getAppRootPath(): string {
-    // 現在のパスのルートから2レベルまでをアプリケーションルートパスとして使用する
-    //   ex) /lifemark/karte/xx → /framework/karte
-    return this.isProduction()
-      ? window.location.pathname.replace(/^((\/([^/]*)){2}).*$/, "$1")
-      : "";
-  }
 }
 
-/**
- * 定義値を文字列で取得します。
- * ※未定義の場合、空文字列を返します。
- * @private
- * @param env 環境変数
- */
 function _getString(env: string | undefined): string {
   return env ? env : "";
 }
 
-/**
- * 定義値を真理値で取得します。
- * ※未定義、および、true 以外の場合、false を返します。
- * @private
- * @param env 環境変数
- *
- */
 //eslint-disable-next-line
 function _getBoolean(env: string | undefined): boolean {
   return !!env && env.toLowerCase() === "true";
 }
 
-/**
- * 定義値を数値で取得します。
- * ※未定義の場合、0 を返します。
- * @private
- * @param env 環境変数
- */
 function _getNumber(env: string | undefined): number {
   return env ? Number(env) : 0;
 }

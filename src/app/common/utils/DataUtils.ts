@@ -1,5 +1,5 @@
 /**
- * データユーティリティクラス
+ * DataUtils
  */
 export class DataUtils {
   static isNullObject(obj: Object) {

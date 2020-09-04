@@ -1,5 +1,5 @@
 /**
- * ブラウザユーティリティクラス
+ * BrowserUtils
  */
 export class BrowserUtils {
   static getUserAgent() {
