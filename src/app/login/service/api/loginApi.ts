@@ -19,6 +19,7 @@ export async function callLoginApi(params: RequestData) {
     //   }
     // );
     await wait(1000);
+
     return data;
   } catch (error) {
     throw new Error(error);

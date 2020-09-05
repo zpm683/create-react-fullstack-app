@@ -4,7 +4,7 @@ import LoadingShower from "./components/LoadingShower";
 export { AppPaths } from "./config/AppPaths";
 
 //i18n
-export { ERR_PAGE_KEYS, LOGIN_KEYS } from "./i18n/keys";
+export * from "./i18n/keys";
 
 // redux
 export * from "./redux";
@@ -14,7 +14,7 @@ export * from "./utils/BrowserUtils";
 export * from "./utils/DataUtils";
 export * from "./utils/ProcessEnvUtils";
 export * from "./utils/StringUtils";
-export * from "./utils/testUtils";
+export * from "./utils/functionUtils";
 
 // middlewares
 export { withLoading } from "./middlewares/withLoading";

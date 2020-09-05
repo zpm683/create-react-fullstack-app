@@ -1,5 +1,5 @@
 /**
- * wait
+ * wait some time in async function
  * @param ms
  * @example async () => {
   await wait(2000);
