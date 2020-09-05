@@ -11,7 +11,6 @@ import IMG_LOGO from "../assets/img/logo.png";
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken, selectLoginInfo, doLoginApi } from "../redux/loginSlice";
-import { AppPaths } from "../../common";
 import { useTranslation } from "react-i18next";
 import { LOGIN_KEYS as KEYS } from "../../common";
 import { theNextPage } from "../config/loginConfig";
