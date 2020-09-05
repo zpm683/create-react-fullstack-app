@@ -14,6 +14,7 @@ import { selectToken, selectLoginInfo, doLoginApi } from "../redux/loginSlice";
 import { AppPaths } from "../../common";
 import { useTranslation } from "react-i18next";
 import { LOGIN_KEYS as KEYS } from "../../common";
+import { theNextPage } from "../config/loginConfig";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -44,7 +45,7 @@ export default function LoginPanel() {
 
   React.useEffect(() => {
     if (token !== "") {
-      history.push(AppPaths.ISDEVING);
+      history.push(theNextPage);
     }
     // tslint:disable-next-line:align
   }, [token, history]);
