@@ -1,7 +1,7 @@
 import { LoginLocalesKeys, ErrPageLocalesKeys } from "common.i18n";
 
 /**
- * LOGIN i18n Text Keys
+ * login i18n Text Keys
  * @todo add key:"key" in LOGIN_KEYS
  */
 export const LOGIN_KEYS: LoginLocalesKeys = {
@@ -14,7 +14,7 @@ export const LOGIN_KEYS: LoginLocalesKeys = {
 };
 
 /**
- * DEV i18n Text Keys
+ * err-page i18n Text Keys
  * @todo add key:"key" in ERR_PAGE_KEYS
  */
 export const ERR_PAGE_KEYS: ErrPageLocalesKeys = {
