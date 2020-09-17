@@ -80,7 +80,6 @@
 - react-use 一个开源的 Hook 库
 - react-color 颜色选择库
 - immutable 数据优化
-- immutable 数据优化
 - (未来)puppeteer e2e 测试
 
 ## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
