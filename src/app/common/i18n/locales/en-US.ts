@@ -21,5 +21,3 @@ export const english: AllLocalesKeys = {
   NOT_FOUND_404: "ohhh no~ 404 NotFound",
   SEVIER_ERR_500: "ohhh no~ 500 NotFound",
 };
-
-

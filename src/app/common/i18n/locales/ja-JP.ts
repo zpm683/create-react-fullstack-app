@@ -15,5 +15,3 @@ export const japanese: AllLocalesKeys = {
   NOT_FOUND_404: "ページが存在しません",
   SEVIER_ERR_500: "サーバー接続エラーがあります",
 };
-
-

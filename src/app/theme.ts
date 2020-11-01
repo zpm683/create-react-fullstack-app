@@ -27,5 +27,3 @@ export const theme = createMuiTheme({
     type: "light",
   },
 });
-
-
