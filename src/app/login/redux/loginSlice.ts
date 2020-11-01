@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState, AppThunk } from "../../store";
-import { callLoginApi } from "../service/api/loginApi";
+import { callLoginApi } from "../api/loginApi";
 import { LoginInfo } from "login.params";
 import { RequestData, ResponseData } from "login.api.loginApi";
-import { withLoading } from "../../common";
+import { withLoading } from "../../common/middlewares";
 
 interface ILoginStoreState {
   loginInfo: LoginInfo;

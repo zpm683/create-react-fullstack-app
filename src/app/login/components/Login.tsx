@@ -2,11 +2,11 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import LoginPanel from "./LoginPanel";
+import { LoginPanel } from "./LoginPanel";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import { useTranslation } from "react-i18next";
-import { LOGIN_KEYS as KEYS } from "../../common";
+import { LOGIN_KEYS as KEYS } from "../../common/i18n";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function Login() {
+export const Login = () => {
   const classes = useStyles();
   const { t } = useTranslation();
   return (
@@ -80,4 +80,4 @@ export default function Login() {
       </Grid>
     </Box>
   );
-}
+};

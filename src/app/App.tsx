@@ -3,17 +3,17 @@
  */
 
 import React from "react";
-import WebRouter from "./Router";
+import { Router } from "./Router";
 import { Provider } from "react-redux";
-import store, { persistor } from "./store";
+import { store, persistor } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
 
-export default function App() {
+export const App = () => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <WebRouter />
+        <Router />
       </PersistGate>
     </Provider>
   );
-}
+};

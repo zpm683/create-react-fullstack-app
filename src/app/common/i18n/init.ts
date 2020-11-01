@@ -2,14 +2,14 @@ import i18n, { Resource } from "i18next";
 import { initReactI18next } from "react-i18next";
 
 // language files
-import enUS from "./locales/en-US";
-import jaJp from "./locales/ja-JP";
-import zhCN from "./locales/zh-CN";
+import { english } from "./locales/en-US";
+import { japanese } from "./locales/ja-JP";
+import { chinese } from "./locales/zh-CN";
 
 const resources: Resource = {
-  en: { translation: enUS },
-  ja: { translation: jaJp },
-  "zh-CN": { translation: zhCN },
+  en: { translation: english },
+  ja: { translation: japanese },
+  "zh-CN": { translation: chinese },
 };
 
 // set i18n

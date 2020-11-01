@@ -1,11 +1,11 @@
 /**
- * AppPaths.ts unit test
+ * APP_PATHS.ts unit test
  *
  */
-import { AppPaths } from "../../../app/common/config/AppPaths";
+import { APP_PATHS } from "../../../app/common/config/APP_PATHS";
 
-describe("AppPaths.ts unit test", () => {
-  it("Case AppPaths ", () => {
-    expect(AppPaths).not.toBeNull();
+describe("APP_PATHS.ts unit test", () => {
+  it("Case APP_PATHS ", () => {
+    expect(APP_PATHS).not.toBeNull();
   });
 });

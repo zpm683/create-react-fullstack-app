@@ -37,7 +37,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 /**
  *  store
  */
-const store = configureStore({
+export const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware({
     serializableCheck: {
@@ -54,7 +54,7 @@ export const persistor = persistStore(store);
  *  store RootState Type
  */
 export type RootState = ReturnType<typeof store.getState>;
-export default store;
+
 /**
  *  AppThunk Type
  */

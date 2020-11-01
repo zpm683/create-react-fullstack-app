@@ -12,7 +12,7 @@ import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken, selectLoginInfo, doLoginApi } from "../redux/loginSlice";
 import { useTranslation } from "react-i18next";
-import { LOGIN_KEYS as KEYS } from "../../common";
+import { LOGIN_KEYS as KEYS } from "../../common/i18n";
 import { theNextPage } from "../config/loginConfig";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function LoginPanel() {
+export const LoginPanel = () => {
   const classes = useStyles();
   const { t } = useTranslation();
   const loginInfo = useSelector(selectLoginInfo);
@@ -87,8 +87,8 @@ export default function LoginPanel() {
             label={t(KEYS.USER_NAME)}
             variant="outlined"
             value={userId}
-            onChange={e => changeUserId(e.target.value)}
-            onKeyPress={e => doEnter(e.which)}
+            onChange={(e) => changeUserId(e.target.value)}
+            onKeyPress={(e) => doEnter(e.which)}
           />
           <br />
           <br />
@@ -98,8 +98,8 @@ export default function LoginPanel() {
             label={t(KEYS.PASSWORD)}
             variant="outlined"
             value={password}
-            onChange={e => changePassword(e.target.value)}
-            onKeyPress={e => doEnter(e.which)}
+            onChange={(e) => changePassword(e.target.value)}
+            onKeyPress={(e) => doEnter(e.which)}
           />
         </CardContent>
         <CardContent>
@@ -131,7 +131,7 @@ export default function LoginPanel() {
             variant="contained"
             color="primary"
             onClick={doLogin}
-            onKeyPress={e => doEnter(e.which)}
+            onKeyPress={(e) => doEnter(e.which)}
           >
             {t(KEYS.LOGIN)}
           </Button>
@@ -139,4 +139,4 @@ export default function LoginPanel() {
       </Card>
     </>
   );
-}
+};

@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { cleanToken } from "../../login";
 import { useHistory } from "react-router-dom";
-import { AppPaths } from "../../common";
+import { APP_PATHS } from "../../common/config";
 
 /**
  * useGoRootPage
@@ -14,7 +14,7 @@ export function useGoRootPage() {
   const history = useHistory();
   const goRootPage = () => {
     dispatch(cleanToken());
-    history.push(AppPaths.ROOT);
+    history.push(APP_PATHS.ROOT);
   };
 
   return goRootPage;

@@ -9,7 +9,7 @@ import { AllLocalesKeys } from "common.i18n";
 /**
  * 英語
  */
-const english: AllLocalesKeys = {
+export const english: AllLocalesKeys = {
   HELLO: "hello",
   LOGIN: "login",
   IS_DEVING: "is deving",
@@ -22,4 +22,4 @@ const english: AllLocalesKeys = {
   SEVIER_ERR_500: "ohhh no~ 500 NotFound",
 };
 
-export default english;
+

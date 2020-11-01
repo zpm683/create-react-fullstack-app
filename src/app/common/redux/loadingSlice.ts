@@ -30,4 +30,4 @@ const loadingSlice = createSlice({
 
 export const selectLoading = (state: RootState) => state.common.loading;
 export const { setErrMsg, cleanErrMsg, setIsLoading } = loadingSlice.actions;
-export default loadingSlice.reducer;
+export const loadingReducer = loadingSlice.reducer;

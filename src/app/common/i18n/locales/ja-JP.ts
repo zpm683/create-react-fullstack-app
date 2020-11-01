@@ -3,7 +3,7 @@ import { AllLocalesKeys } from "common.i18n";
 /**
  * 日本語
  */
-const japanese: AllLocalesKeys = {
+export const japanese: AllLocalesKeys = {
   HELLO: "こんにちは",
   LOGIN: "ログイン",
   IS_DEVING: "開発中",
@@ -16,4 +16,4 @@ const japanese: AllLocalesKeys = {
   SEVIER_ERR_500: "サーバー接続エラーがあります",
 };
 
-export default japanese;
+

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Snackbar from "@material-ui/core/Snackbar";
 import Backdrop from "@material-ui/core/Backdrop";
-import { useOnline } from "../middlewares/customHooks";
+import { useOnline } from "../middlewares/hooks/customHooks";
 import { selectLoading } from "../redux";
 import { useSelector } from "react-redux";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
  *
  * @see common/middlewares/withLoading.ts
  */
-export default function LoadingShower() {
+export const LoadingShower = () => {
   const classes = useStyles();
   const isOnline = useOnline();
   const { isLoading, errMsg } = useSelector(selectLoading);
@@ -60,4 +60,4 @@ export default function LoadingShower() {
       </Backdrop>
     </>
   );
-}
+};

@@ -9,7 +9,7 @@ import { AllLocalesKeys } from "common.i18n";
 /**
  * 中国語
  */
-const chinese: AllLocalesKeys = {
+export const chinese: AllLocalesKeys = {
   HELLO: "你好",
   LOGIN: "登录",
   IS_DEVING: "开发中",
@@ -21,5 +21,3 @@ const chinese: AllLocalesKeys = {
   NOT_FOUND_404: "页面飞了",
   SEVIER_ERR_500: "服务器崩了",
 };
-
-export default chinese;

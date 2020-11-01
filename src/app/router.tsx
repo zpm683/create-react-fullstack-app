@@ -7,15 +7,15 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from "./theme";
-import { AppPaths } from "./common";
+import { theme } from "./theme";
+import { APP_PATHS } from "./common/config";
 
 // TODO: import component
-import Login from "./login";
+import { Login } from "./login";
 import { NotFound404, IsDoingDev } from "./err-page";
-import { LoadingShower } from "./common";
+import { LoadingShower } from "./common/components";
 
-export default function Router() {
+export const Router = () => {
   return (
     <>
       <MuiThemeProvider theme={theme}>
@@ -23,13 +23,13 @@ export default function Router() {
         <LoadingShower />
         <BrowserRouter>
           <Switch>
-            <Route exact path={AppPaths.ROOT} component={Login} />
-            <Route path={AppPaths.LOGIN} component={Login} />
-            <Route path={AppPaths.ISDEVING} component={IsDoingDev} />
+            <Route exact path={APP_PATHS.ROOT} component={Login} />
+            <Route path={APP_PATHS.LOGIN} component={Login} />
+            <Route path={APP_PATHS.ISDEVING} component={IsDoingDev} />
             <Route path="*" component={NotFound404} />
           </Switch>
         </BrowserRouter>
       </MuiThemeProvider>
     </>
   );
-}
+};

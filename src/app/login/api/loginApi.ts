@@ -1,6 +1,6 @@
 // import { apiClient } from "../../../common";
 import { RequestData, ResponseData } from "login.api.loginApi";
-import { wait } from "../../../common";
+import { wait } from "../../common/utils";
 
 export async function callLoginApi(params: RequestData) {
   try {

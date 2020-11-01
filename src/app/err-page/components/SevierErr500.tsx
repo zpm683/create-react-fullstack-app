@@ -8,7 +8,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import { useTranslation } from "react-i18next";
-import { ERR_PAGE_KEYS as KEYS } from "../../common";
+import { ERR_PAGE_KEYS as KEYS } from "../../common/i18n";
 import { useGoRootPage } from "../middlewares/customHooks";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
-export default function SevierErr500() {
+export const SevierErr500 = () => {
   const classes = useStyles();
   const { t } = useTranslation();
   const goRootPage = useGoRootPage();
@@ -39,4 +39,4 @@ export default function SevierErr500() {
       </Link>
     </Paper>
   );
-}
+};

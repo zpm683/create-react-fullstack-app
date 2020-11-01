@@ -7,7 +7,7 @@ import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-import { ERR_PAGE_KEYS as KEYS } from "../../common";
+import { ERR_PAGE_KEYS as KEYS } from "../../common/i18n";
 import { useTranslation } from "react-i18next";
 import { useGoRootPage } from "../middlewares/customHooks";
 
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
-export default function NotFound404() {
+export const NotFound404 = () => {
   const classes = useStyles();
   const goRootPage = useGoRootPage();
   const { t } = useTranslation();
@@ -41,4 +41,4 @@ export default function NotFound404() {
       </Link>
     </Paper>
   );
-}
+};

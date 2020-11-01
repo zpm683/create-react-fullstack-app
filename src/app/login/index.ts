@@ -1,3 +1,3 @@
-import Login from "./components/Login";
-export default Login;
+
+export {Login} from "./components/Login";
 export { cleanToken, loginReducer } from "./redux/loginSlice";

@@ -1,17 +1,17 @@
 import { ProcessEnvUtils } from "../utils/ProcessEnvUtils";
 
 /**
- * AppPaths
+ * APP_PATHS
  */
-export class AppPaths {
+export class APP_PATHS {
   /** root path */
   static readonly ROOT = ProcessEnvUtils.getBaseURL();
 
   /** login */
-  static readonly LOGIN = `${AppPaths.ROOT}login`;
+  static readonly LOGIN = `${APP_PATHS.ROOT}login`;
 
   /** isDeving */
-  static readonly ISDEVING = `${AppPaths.ROOT}isDeving`;
+  static readonly ISDEVING = `${APP_PATHS.ROOT}isDeving`;
 
   // TODO: add more path
 }
