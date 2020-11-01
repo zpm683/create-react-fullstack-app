@@ -2,7 +2,7 @@
  * store unit test
  *
  */
-import store, { persistor } from "../app/store";
+import { store, persistor } from "../app/store";
 
 describe("store.ts unit test.", () => {
   it("Case store", () => {

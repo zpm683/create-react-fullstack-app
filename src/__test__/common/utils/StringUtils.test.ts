@@ -2,7 +2,7 @@
  * StringUtils.ts unit test
  *
  */
-import { StringUtils } from "../../../app/common";
+import { StringUtils } from "../../../app/common/utils";
 
 describe("StringUtils.ts unit test", () => {
   it("Case getRandomString", () => {

@@ -2,7 +2,7 @@
  * ProcessEnvUtils.ts unit test
  *
  */
-import { ProcessEnvUtils } from "../../../app/common";
+import { ProcessEnvUtils } from "../../../app/common/utils";
 
 describe("ProcessEnvUtils.ts unit test", () => {
   it("Case get NODE_ENV", () => {
@@ -20,9 +20,5 @@ describe("ProcessEnvUtils.ts unit test", () => {
       "http://localhost:8080/test/log",
     );
     expect(ProcessEnvUtils.getApiTimeout()).toBe(1000);
-  });
-
-  it("Case getContextPath", () => {
-    expect(ProcessEnvUtils.getContextPath()).toBe("");
   });
 });

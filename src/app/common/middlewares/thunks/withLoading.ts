@@ -1,5 +1,5 @@
-import { AppThunk } from "../../store";
-import { cleanErrMsg, setIsLoading, setErrMsg } from "../redux";
+import { AppThunk } from "../../../store";
+import { cleanErrMsg, setIsLoading, setErrMsg } from "../../redux";
 type AppThunkDispatch = Parameters<AppThunk>[0];
 type AppThunkStore = Parameters<AppThunk>[1];
 

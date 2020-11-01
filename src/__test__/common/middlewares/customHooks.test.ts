@@ -4,12 +4,7 @@
  */
 
 import { renderHook, act } from "@testing-library/react-hooks";
-import {
-  useOnline,
-  usePrevious,
-  useComponentDidMount,
-  useComponentWillMount,
-} from "../../../app/common";
+import { useOnline, usePrevious } from "../../../app/common/middlewares/hooks";
 
 describe("customHooks.ts unit test", () => {
   it("Case useOnline", () => {
@@ -22,22 +17,6 @@ describe("customHooks.ts unit test", () => {
     act(() => {
       // FIXME
       expect(result.current).toBeNull();
-    });
-  });
-
-  it("Case useComponentDidMount", () => {
-    const fn = jest.fn();
-    renderHook(() => useComponentDidMount(fn));
-    act(() => {
-      expect(fn).toBeCalledTimes(1);
-    });
-  });
-
-  it("Case useComponentWillMount", () => {
-    const fn = jest.fn();
-    renderHook(() => useComponentWillMount(fn));
-    act(() => {
-      expect(fn).toBeCalledTimes(1);
     });
   });
 });

@@ -2,7 +2,7 @@
  * BrowserUtils.ts unit test
  *
  */
-import { DataUtils } from "../../../app/common";
+import { DataUtils } from "../../../app/common/utils";
 
 describe("BrowserUtils.ts unit test", () => {
   it("Case isNullObject", () => {

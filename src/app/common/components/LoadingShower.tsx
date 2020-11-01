@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Snackbar from "@material-ui/core/Snackbar";
 import Backdrop from "@material-ui/core/Backdrop";
-import { useOnline } from "../middlewares/hooks/customHooks";
+import { useOnline } from "../middlewares/hooks";
 import { selectLoading } from "../redux";
 import { useSelector } from "react-redux";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
