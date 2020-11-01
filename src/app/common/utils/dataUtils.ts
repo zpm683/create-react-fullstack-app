@@ -5,10 +5,6 @@ export const isEmptyObject = (obj: Object) => {
   return Object.keys(obj).length === 0 ? true : false;
 };
 
-export const isEmptyObject = (obj: Object) => {
-  return Object.keys(obj).length === 0 ? true : false;
-};
-
 /**
  * 一元数组转换二元数组
 
@@ -24,4 +20,16 @@ export const convertDyadicArray = (arr: string[], row: number) => {
     dyadicArray.push(arr.slice(i * col, (i + 1) * col));
   }
   return dyadicArray;
+};
+
+export const fomartString = (str: string | undefined): string => {
+  return str ? str : "";
+};
+
+export const fomartStringToBool = (str: string | undefined): boolean => {
+  return !!str && str.toLowerCase() === "true";
+};
+
+export const fomartStringToNumber = (str: string | undefined): number => {
+  return str ? Number(str) : 0;
 };
