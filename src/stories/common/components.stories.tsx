@@ -5,9 +5,9 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Typography from "@material-ui/core/Typography";
 import { withKnobs } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
+import { Link, Typography } from "@material-ui/core";
 
 const Components = storiesOf("common|Components", module);
 Components.addDecorator(withKnobs)
