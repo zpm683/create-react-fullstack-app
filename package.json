@@ -6,7 +6,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --watchAll=false",
+    "test": "react-scripts test --env=jsdom-fourteen --coverage=true --watchAll=false --testPathIgnorePatterns=src/e2e",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
@@ -26,6 +26,7 @@
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "cross-env": "^7.0.2",
+    "dayjs": "^1.9.3",
     "i18next": "^19.6.2",
     "immutable": "^4.0.0-rc.12",
     "localforage": "^1.9.0",
