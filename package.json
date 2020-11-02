@@ -10,7 +10,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "e2e-test": "npx jest --config=e2e.config.json",
+    "e2e-test": "npx jest --config=e2e.config.json"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -68,7 +68,7 @@
     "puppeteer": "^5.2.1",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-test-renderer": "^16.13.1",
-    "ts-jest": "^26.3.0",
+    "ts-jest": "^26.3.0"
   },
     "jest": {
     "collectCoverageFrom": [
