@@ -11,7 +11,7 @@ const Components = storiesOf("common|Components", module);
 Components
   .add("ErrorBoundary", () => (
     <>
-      <Typography>ErrorBoundaryは何ですか?</Typography>
+      <Typography>What is ErrorBoundary?</Typography>
       <Link
         target="_blank"
         href="https://zh-hans.reactjs.org/docs/error-boundaries.html"
