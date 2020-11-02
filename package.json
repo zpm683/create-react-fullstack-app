@@ -65,6 +65,13 @@
     "react-docgen-typescript-loader": "^3.7.2",
     "react-test-renderer": "^16.13.1"
   },
+    "jest": {
+    "collectCoverageFrom": [
+      "src/app/*.{ts,tsx}",
+      "src/app/common/**/*.{ts,tsx}",
+      "!src/index.tsx"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
