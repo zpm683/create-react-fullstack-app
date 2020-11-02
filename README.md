@@ -47,7 +47,8 @@
     │  │      ├─api　　//api
     │  │      └─tools　　//纯数据处理工具
     ├─stories　　//工程storybook目录
-    └─__tests__　　//工程测试目录
+    ├─e2e　　//端对端测试目录
+    └─__tests__　　//单元测试目录
 
 ```
 
@@ -63,8 +64,7 @@
 ## 已经集成的核心技术有:
 
 - react 核心前端框架
-- redux 状态管理
-- @reduxjs/toolkit redux 速成工具
+- @reduxjs/toolkit redux（状态管理） 速成工具
 - react-router-dom 路由管理
 - react-query 远程数据 fetch 框架
 - material-ui UI 框架
@@ -80,7 +80,7 @@
 - react-use 一个开源的 Hook 库
 - react-color 颜色选择库
 - immutable 数据优化
-- puppeteer e2e 测试(未来)
+- puppeteer e2e 测试
 
 ## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
