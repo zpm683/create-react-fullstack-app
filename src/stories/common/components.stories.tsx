@@ -6,9 +6,11 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import Typography from "@material-ui/core/Typography";
+import { withKnobs } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
 
 const Components = storiesOf("common|Components", module);
-Components
+Components.addDecorator(withKnobs)
   .add("ErrorBoundary", () => (
     <>
       <Typography>What is ErrorBoundary?</Typography>
