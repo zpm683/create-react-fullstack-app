@@ -1,17 +1,16 @@
 import { getBaseURL } from "../utils/processEnvUtils";
+const BASEURL = getBaseURL();
 
 /**
- * APP_PATHS
+ *  APP_PATHS
  */
-export class APP_PATHS {
-  /** root path */
-  static readonly ROOT = getBaseURL();
+export const APP_PATHS = {
+
+  ROOT: BASEURL,
 
   /** login */
-  static readonly LOGIN = `${APP_PATHS.ROOT}login`;
+  LOGIN: `${BASEURL}login`,
 
   /** isDeving */
-  static readonly ISDEVING = `${APP_PATHS.ROOT}isDeving`;
-
-  // TODO: add more path
-}
+  ISDEVING: `${BASEURL}deving`,
+};
