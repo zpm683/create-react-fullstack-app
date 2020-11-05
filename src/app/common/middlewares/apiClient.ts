@@ -1,13 +1,13 @@
 import axios from "axios";
-import { ProcessEnvUtils } from "../utils/ProcessEnvUtils";
+import { getApiServerURL } from "../utils/processEnvUtils";
 
 /**
  * apiClient: axios instance
- *
+ * @author FXS)zhang.puming
  * @see https://github.com/axios/axios#creating-an-instance
  */
 export const apiClient = axios.create({
-  baseURL: ProcessEnvUtils.getApiServerURL(),
+  baseURL: getApiServerURL(),
   headers: {
     "Content-Type": "application/json",
   },
