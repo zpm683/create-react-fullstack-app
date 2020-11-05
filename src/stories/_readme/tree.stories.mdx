@@ -1,0 +1,54 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Readme/层级" />
+
+#### 目录层级
+
+一个良好的目录层级会给项目带来更高的可维护性，目录层级的设计大有讲究。  
+它并不是千篇一律的，不同规模的项目，目录层级应该是不同的。  
+需要把握一个度，小题大做和大题小做都不可取。
+
+以 create-react-fullstack-app 为例，它的层级是按业务拆分的。  
+这种层级更适合中/大规模的项目。小规模项目使用它显得过于复杂，  
+而超大规模项目又有些不够，还需要向各模块独立化的方向再加调整。
+
+但是总的来说基于 React 组件化的思想可以分为：
+
+- 业务层 (按功能/类别/位置划分)
+- 公共层 （能够在各种 React 项目中共享的内容【长期累积】）
+
+公共层可以说是 React 组件化带来的直接好处了，  
+可以抽象出自己的一套可复用的 React 组件/工具集  
+以此节约 React 项目的开发成本，这是一种长远的考虑。
+
+```
+├─.storybook　　//storybook配置
+├─public　　//CRA默认
+└─src　　//CRA默认源码目录
+    ├─app　　//业务工程目录
+    │  ├─common　　//公共目录
+    │  │  ├─@types　　//公共接口定义
+    │  │  ├─assets　　//公共资源文件
+    │  │  │  ├─doc
+    │  │  │  ├─img
+    │  │  │  └─json
+    │  │  ├─components　　//公共组件
+    │  │  ├─config　　//公共配置
+    │  │  ├─hooks　　//公共Hooks
+    │  │  ├─i18n　　//国际化
+    │  │  │  └─locales
+    │  │  ├─middlewares　　//中间件
+    │  │  └─utils　　//工具集
+    │  ├─login　　//具体业务（Demo）
+    │  │  ├─@types　　//具体业务接口定义
+    │  │  ├─assets　　//该业务所需资源
+    │  │  │  └─img
+    │  │  ├─components　　//该业务组件
+    │  │  ├─config　　//该业务配置项
+    │  │  ├─redux　　//该业务redux（RTK）
+    │  │  ├─api　　//api
+    │  │  └─tools　　//纯数据处理工具
+    ├─stories　　//storybook工程目录
+    ├─e2e　　//端对端测试目录
+    └─__tests__　　//单元测试目录
+```

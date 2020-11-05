@@ -1,0 +1,28 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="common/middlewares/apiClient" />
+
+### apiClient.ts API 通信中间件
+
+简单的封装了 Axios 实例用于调用 API  
+好处是提供了统一化配置
+
+### 示例
+
+```typescript
+/**
+ * ログインデータのAPI
+ * @author FXS)zhang.puming
+ */
+import { apiClient } from "../../common/middlewares";
+import { RequestData, ResponseData } from "login.api.loginApi";
+
+export const callLoginApi = async (params: RequestData) => {
+  try {
+    const { data } = await apiClient.post<ResponseData>(`/token`, params);
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+```

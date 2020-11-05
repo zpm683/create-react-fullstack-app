@@ -1,0 +1,37 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="common/config/APP_PATHS" />
+
+### APP_PATHS.ts 定义了 App 的页面路径
+
+### 格式:
+
+- APP_PATHS 全大写（表示是只能初始化的常量）
+- 对象内部 key 也全大写
+- 记得拼接基地址
+
+### 示例
+
+```typescript
+import { getBaseURL } from "../utils/processEnvUtils";
+const BASEURL = getBaseURL(); // 获取基地址
+
+/**
+ * アプリケーションパスの定数
+ */
+export const APP_PATHS = {
+  /** ルート */
+  ROOT: BASEURL,
+
+  /** login */
+  LOGIN: `${BASEURL}login`,
+
+  /** mainmenu */
+  MAINMENU: `${BASEURL}mainmenu`,
+
+  /** karte */
+  KARTE: `${BASEURL}karte`,
+};
+```
+
+---
