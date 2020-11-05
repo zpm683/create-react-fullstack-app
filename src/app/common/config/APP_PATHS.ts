@@ -1,11 +1,11 @@
-import { ProcessEnvUtils } from "../utils/ProcessEnvUtils";
+import { getBaseURL } from "../utils/processEnvUtils";
 
 /**
  * APP_PATHS
  */
 export class APP_PATHS {
   /** root path */
-  static readonly ROOT = ProcessEnvUtils.getBaseURL();
+  static readonly ROOT = getBaseURL();
 
   /** login */
   static readonly LOGIN = `${APP_PATHS.ROOT}login`;
