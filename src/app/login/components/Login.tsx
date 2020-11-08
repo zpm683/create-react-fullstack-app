@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
       bottom: 0,
     },
     footer: {
+      marginTop: "20px",
       textAlign: "center",
       color: "#ffffff",
     },
@@ -56,27 +57,27 @@ export const Login = () => {
       </Grid>
       <Grid
         container
-        direction="row"
+        direction="column"
         justify="space-evenly"
-        alignItems="flex-start"
+        alignItems="center"
         className={classes.panelContainer}
       >
-        <Grid item xs={3} className={classes.loginPanelItem}>
+        <Grid item className={classes.loginPanelItem}>
           <LoginPanel />
         </Grid>
       </Grid>
-      <Grid container className={classes.footerContainer}>
-        <Grid item xs={12}>
-          <Typography className={classes.footer} variant="subtitle2">
-            DEMO Powered by{" "}
-            <Link
-              href="https://github.com/zpm683/create-react-fullstack-app"
-              target="_blank"
-            >
-              create-react-fullstack-app
-            </Link>
-          </Typography>
-        </Grid>
+      <Grid item>
+        <Typography className={classes.footer} variant="subtitle2">
+          DEMO Powered by{" "}
+          <Link
+            // color="inherit"
+            variant="subtitle1"
+            href="https://github.com/zpm683/create-react-fullstack-app"
+            target="_blank"
+          >
+            create-react-fullstack-app
+          </Link>
+        </Typography>
       </Grid>
     </Box>
   );

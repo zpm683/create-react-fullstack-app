@@ -3,7 +3,7 @@
  *
  */
 
-import theme from "../app/theme";
+import { theme } from "../app/theme";
 
 describe("theme.ts unit test.", () => {
   it("theme", () => {

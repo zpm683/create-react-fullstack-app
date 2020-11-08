@@ -2,4 +2,4 @@ export * from "./browserUtils";
 export * from "./processEnvUtils";
 export * from "./dataUtils";
 export * from "./functionUtils";
-export * from "./dateUtils";
+export * from "./dayUtils";

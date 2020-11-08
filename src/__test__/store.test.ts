@@ -3,7 +3,7 @@
  *
  */
 
-import store, { persistor } from "../app/store";
+import { store, persistor } from "../app/store";
 export const storeState = store.getState();
 
 describe("store.ts unit test.", () => {
