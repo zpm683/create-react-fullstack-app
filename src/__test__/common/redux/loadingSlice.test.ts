@@ -9,13 +9,14 @@ import loadingReducer, {
   setIsLoading,
 } from "../../../app/common/redux/loadingSlice";
 import { LoadingState } from "common.params.loading";
-
-const initialState: LoadingState = {
-  isLoading: false,
-  errMsg: "",
-};
+import { RootState } from "../../../app/store";
 
 describe("loadingSlice.ts unit test", () => {
+  const initialState: LoadingState = {
+    isLoading: false,
+    errMsg: "",
+  };
+
   it("Case loadingSlice", () => {
     expect(loadingReducer).not.toBeNull();
   });
@@ -56,6 +57,11 @@ describe("loadingSlice.ts unit test", () => {
   });
 
   it("Case selector", () => {
-    expect(selectLoading).toBeDefined();
+    const morkStoreState = {
+      common: {
+        loading: initialState,
+      },
+    };
+    expect(selectLoading(morkStoreState as RootState)).toBe(initialState);
   });
 });

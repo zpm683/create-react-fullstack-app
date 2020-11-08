@@ -1,11 +1,11 @@
 /**
- * theme unit test
+ * theme.ts unit test
  *
  */
 
 import theme from "../app/theme";
 
-describe("theme.tsx unit test.", () => {
+describe("theme.ts unit test.", () => {
   it("theme", () => {
     expect(theme.palette.type).toBe("light");
   });

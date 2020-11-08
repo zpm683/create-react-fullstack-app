@@ -3,7 +3,6 @@ import { getApiServerURL } from "../utils/processEnvUtils";
 
 /**
  * apiClient: axios instance
- * @author FXS)zhang.puming
  * @see https://github.com/axios/axios#creating-an-instance
  */
 export const apiClient = axios.create({

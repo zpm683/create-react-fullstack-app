@@ -2,7 +2,7 @@
  * apiClient.ts unit test
  *
  */
-import { apiClient } from "../../../app/common/middlewares";
+import { apiClient } from "../../../app/common/middlewares/apiClient";
 
 describe("apiClient.ts unit test", () => {
   it("Case apiClient", () => {

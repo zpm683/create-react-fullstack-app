@@ -2,7 +2,7 @@
  * BrowserUtils.ts unit test
  *
  */
-import { BrowserUtils } from "../../../app/common/utils";
+import * as BrowserUtils from "../../../app/common/utils/browserUtils";
 
 describe("BrowserUtils.ts unit test", () => {
   it("Case BrowserUtils static method", () => {
@@ -12,6 +12,7 @@ describe("BrowserUtils.ts unit test", () => {
     expect(BrowserUtils.isOnLine()).not.toBeNull();
     expect(BrowserUtils.isOpera()).not.toBeNull();
     expect(BrowserUtils.isSafari()).not.toBeNull();
+    expect(BrowserUtils.isSafariOrChrome()).not.toBeNull();
     expect(BrowserUtils.getUserAgent()).not.toBeNull();
   });
 });

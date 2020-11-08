@@ -3,18 +3,52 @@
  *
  */
 import React from "react";
-import * as redux from "react-redux";
-import { render, fireEvent, act } from "@testing-library/react";
+import {
+  render,
+  fireEvent,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import { LoadingShower } from "../../../app/common/components/LoadingShower";
+import { useSelector, useOnline } from "../../_utils/morkFunc";
 
 describe("LoadingShower.tsx unit test.", () => {
-  it("Check ChildComponents", () => {
-    const useSelectorSpy = jest.spyOn(redux, "useSelector");
-    useSelectorSpy.mockReturnValue({ isLoading: true, errMsg: "Err" });
-    const { getByTestId } = render(<LoadingShower />);
-    expect(getByTestId("LoadingShower-Snackbar")).toBeInTheDocument();
-    expect(getByTestId("LoadingShower-Backdrop")).toBeInTheDocument();
-    useSelectorSpy.mockReset();
-    useSelectorSpy.mockRestore();
+  it("when has err", async () => {
+    useSelector.mockReturnValue({ isLoading: true, errMsg: "Err" });
+    useOnline.mockReturnValue(false);
+
+    const { getByTestId, queryByTestId } = render(<LoadingShower />);
+    expect(useOnline).toBeCalled();
+    expect(useSelector).toBeCalled();
+
+    const SnackbarELE = getByTestId("LoadingShower-Snackbar");
+    const BackdropELE = getByTestId("LoadingShower-Backdrop");
+    expect(SnackbarELE).toBeInTheDocument();
+    expect(BackdropELE).toBeInTheDocument();
+
+    fireEvent.click(BackdropELE);
+
+    waitForElementToBeRemoved(SnackbarELE).then(() => {
+      expect(queryByTestId("LoadingShower-Snackbar")).not.toBeInTheDocument();
+    });
+
+    useSelector.mockReset();
+    useOnline.mockReset();
+  });
+
+  it("when no err", () => {
+    useSelector.mockReturnValue({ isLoading: false, errMsg: "" });
+    useOnline.mockReturnValue(true);
+
+    const { queryByTestId, container } = render(<LoadingShower />);
+    expect(useOnline).toBeCalled();
+    expect(useSelector).toBeCalled();
+
+    expect(queryByTestId("LoadingShower-Backdrop")).toBeInTheDocument();
+    expect(queryByTestId("LoadingShower-Snackbar")).not.toBeInTheDocument();
+
+    expect(container).toMatchSnapshot();
+
+    useSelector.mockReset();
+    useOnline.mockReset();
   });
 });
