@@ -1,0 +1,45 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="React/4 React最佳实践/4.1 快速启动React工程" />
+
+## 快速启动 React 工程
+
+React 工程的启动往往有两种:
+
+- create-react-app 脚手架
+- 自己手动搭建
+
+---
+
+[create-react-app](https://create-react-app.dev/ "create-react-app")是一款已经配置好的，开箱即用的脚手架，通过它来启动 React 项目是非常方便的。  
+开发环境的搭建需要 7 步就可完成：  
+Step1：安装 vscode  
+Step2：安装 node.js，  
+Step3：npm i –g nrm （换源工具）  
+Step4：nrm use cnpm  
+Step5：npm install -g create-react-app  
+Step6：npx create-react-app [工程名]  
+如果需要 TS 版再加上参数： --template typescript  
+Step7：cd [工程名]  
+之后便可以着手于 src 业务层级的构建了。
+
+---
+
+如果熟悉前端的各种构建工具，手动搭建则是一种自由度更大的选择，不过过程就比较多了  
+因为需求不同，步骤也不太相同，这里只做概括性描述：  
+Step1：环境搭建（安装 vscode, node.js, 换源工具等）  
+Step2：通过 npm init 初始化工程  
+Step3：通过 npm install 安装 React 核心库  
+Step4：通过 npm install 安装 Webpack 核心库已经各种加载器  
+Step5：通过 npm install 安装 React 生态库  
+Step6：创建总体工程目录  
+Step7：创建 webpack 配置文件并配置  
+Step8：创建其他配置文件并配置  
+Step9：创建 React 工程入口文件，并挂载根组件  
+每步其实都有更多的细节，下面给了 2 个参考链接，网络上资料也比较多。  
+有兴趣可自行查看。
+
+[参考 1](https://juejin.im/post/5e7b16b0f265da57187c77a3 "参考1")  
+[参考 2](https://juejin.im/post/5cfb8c0051882541b24c3ed3 "参考2")
+
+---

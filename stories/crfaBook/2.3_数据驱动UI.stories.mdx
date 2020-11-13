@@ -1,0 +1,107 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="React/2 React核心/2.3 数据驱动UI" />
+
+## 数据驱动 UI （state，props，context）
+
+可以说这是 React 最为独特的地方了，在 React 的世界中，数据是能够驱动 UI 的存在。  
+ 也就是说：数据的变化会带来 UI 上的变化。结合 React 的特点（虚拟 DOM），这些数据被划分为 3 大类：
+
+- state：内部状态 （一种状态机）
+- props：外部属性（逐级传递）
+- context：外部属性（跳跃传递）
+
+## 眼见为实！我们直接看源码
+
+1.3.1 state 是什么？
+StateDemo 组件中有一个 h1 标签显示一个数字，点击旁边按钮，显示的数字会+1。
+
+```javascript
+import React, { useState } from "react";
+
+const StateDemo = () => {
+  // 通过useState方法得到2个变量
+  // counter就是一个“State”，而setCounter则是改变这个"state"(counter)的唯一方法。
+  // 模板：  const [xxx, setXxxx] = useState(初始值);
+  // 基于ES6元组，所以[]中无论如何命名第一个参数总是状态，第二个参数总是改变这个状态的方法。
+  const [counter, setCounter] = useState(0); // useState是一个hooks，将在1.3章节展开
+  const onClick = () => {
+    // 调用修改counter的唯一方法setCounter
+    // 使得counter将从 0的状态变为 0+1 的状态
+    // 这个过程是异步的！
+    // 执行完毕后counter状态发生了改变，react会自动监听这种变化。
+    // 然后刷新当前组件（重新执行StateDemo）
+    // <h1>{0}</h1> --> <h1>{1}</h1>
+    // 从而UI也刷新了。
+    setCounter(counter + 1);
+  };
+
+  // UI
+  // 这种类似html的写法被称为JSX，后面在讨论。
+  return (
+    <>
+      <h1>{counter}</h1>
+      <button onClick={onClick}>+1</button>
+    </>
+  );
+};
+```
+
+在上面的这个 Demo 中，我们单击了按钮后，counter 的状态从 0 变为了 1，  
+状态（数据）发生了变化从而带来了 UI 的变化。
+
+---
+
+1.3.2 props 是什么？
+有两个组件，是父子关系。
+Page 是一个父组件，Title 是一个子组件。
+
+```javascript
+import React from "react";
+
+// 定义并导出一个Title组件
+// 通过h1渲染出text的值
+export const Title = (porps) => {
+  // 从props中解析出text
+  const { text } = porps; // 等价于 porps.test
+  return <h1>{text}</h1>;
+};
+```
+
+显然，props 起始就是传递给 Title 组件的一个参数，并且是一个对象！  
+那么，如何传递？
+
+```javascript
+import React from "react";
+import { Title } from "Title"; // 导入上面这个Title组件
+
+// 一个Page组件，渲染出一个Title和一些段落
+const Page = () => {
+  // Title就像html标签一样使用。
+  // 标签的所有属性总和就是 props对象！
+  return (
+    <>
+      <Title text="Hello" />
+      <p>...</p>
+    </>
+  );
+};
+```
+
+像上面这样，“Hello”将会作为 Title 组件的一个 props 传递给  
+Title 组件内部的 text 变量。  
+这样，只要有类似的需求，我们就可以复用这个 Title 组件了。
+
+---
+
+1.3.3 context 是什么？
+最后，我们再聊聊 context。  
+我们假设刚才的 Page 组件也有自己的 props  
+那么需要在引用 Page 组件的组件中传递 Page 组件需要的 props。  
+如果那个组件也有 props...  
+这样你会发现，props 逐层传递是非常费力的。  
+context 就是为了解决这个问题！  
+有关它的用法，这里不做展开。REACT 官网已经有详细的描述。  
+请参考: [context](https://react.docschina.org/docs/context.html)
+
+---

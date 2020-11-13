@@ -1,0 +1,130 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="React/3 React生态圈/3.2 Typescript" />
+
+### 强大的 Typescript
+
+    Typescript是啥？一句话，是JS(ES6+)的超集。
+    它最大的特色是给JS赋予了类型，让JS如虎添翼变成了“强类型语言”。
+    但是还保留了JS的灵活性。Typescript最终会被转换为一般的JS。
+    TS的类型检查是在开发阶段的，主流的编译器都对TS有着良好的支持。
+    TS大大提高了项目的可维护性，如果你是一个老JSer你应该很清楚JS没有类型带来的种种痛楚。
+
+2.2.1 常见语法
+
+- :（冒号）
+
+```typescript
+let x = 1;
+let y: number; // 使用冒号给变量指定类型
+y = 1; // 正确
+y = ""; // 报错！
+y = {}; // 报错！
+y = undefined; // 报错！
+y = []; // 报错！
+
+let list: number[] = [1, 2, 3]; //初始值
+list = [4, 5]; // 正确
+list = ""; // 报错！
+list = ["1", 2, 3]; // 报错！
+
+let hero: any; // any时，TS不参与类型检查！
+hero = 1; // 正确
+hero = ""; // 正确
+hero = {}; // 正确
+hero = undefined; //正确
+hero = [1]; //正确
+```
+
+- & |
+  与和或符号可以组合多种类型
+
+```typescript
+let x: number | string; // 使用冒号给变量指定类型
+x = 1; // 正确
+x = "xxx"; // 正确
+x = {}; // 报错！
+x = undefined; // 报错！
+x = []; // 报错！
+
+let y: boolean | undefined;
+y = false; // 正确
+y = undefined; // 正确
+
+let list: [] | undefined;
+list = []; // 正确
+list = undefined; // 正确
+
+// 方法
+// getAddStr需要2个number参数，返回参数之和的字符串
+const getAddStr: string = (x: number, y: number) => `${x + y}`;
+```
+
+- type/interface
+  这是 TS 最长用的语法，用来定义一些自定义类型/接口。  
+  推荐使用 type，比 interface 灵活。  
+  一般使用大驼峰式命名！
+
+```typescript
+// 联系方式对象定义
+type Contact = {
+  email: string;
+  phone: nubmer;
+  qq?: nubmer; // 问号代表可选项
+}
+
+type Person = {
+  name: string;
+  age: nubmer;
+  contact: Contact; //复用Contact类型
+}
+
+// 实现一个Person
+// 只要有一个类型不符合就会报错！
+const me:Person = {
+  name:"Zhang";
+  age:24;
+  contact:{
+    phone:123456789;
+    email:"zpm683@qq.com"
+    // qq可以省略
+  }
+}
+```
+
+- as 类型推论
+
+```typescript
+const fn = (data: any) => {
+  // 假设方法返回的data类型是any
+  // 但是你知道这里一定是一个number
+  // 并且要调用toString方法，就可以如下
+  (data as number).toString();
+  // 也可以
+  const num = data as number;
+  num.toString();
+};
+```
+
+- 泛型
+
+```typescript
+type ResData<T> = {
+  state: number;
+  data: T;
+};
+
+const resData: ResData<string> = {
+  state: 200,
+  data: "xxxx", // 这里只能指定string，其他都会报错！
+};
+```
+
+2.2.2 进阶指南
+
+- [TS 中文文档](https://www.tslang.cn/docs/handbook/basic-types.html)
+- [JavaScript、TypeScript、ES6 三者之间关系](https://blog.csdn.net/weixin_45785873/article/details/103159003)
+- [5 分钟了解 TypeScript](https://www.css88.com/doc/typescript/doc/handbook/tutorials/TypeScript%20in%205%20minutes.html)
+- [可能是你需要的 React + TypeScript 50 条规范和经验](https://juejin.im/post/6844903849166110728#heading-41)
+
+---
