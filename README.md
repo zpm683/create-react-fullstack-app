@@ -43,9 +43,8 @@
     │  │  ├─components　　//该业务组件
     │  │  ├─config　　//该业务配置项
     │  │  ├─redux　　//该业务redux（RTK）
-    │  │  └─service　　//该业务服务层
-    │  │      ├─api　　//api
-    │  │      └─tools　　//纯数据处理工具
+    │  │  ├─api　　//api
+    │  │  └─tools　　//纯数据处理工具
     ├─stories　　//工程storybook目录
     ├─e2e　　//端对端测试目录
     └─__tests__　　//单元测试目录
