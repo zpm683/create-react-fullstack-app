@@ -6,7 +6,7 @@
 
 ---
 
-## 结构说明
+## 组织架构
 
 ```
 ├─.storybook　　//storybook配置
@@ -60,7 +60,7 @@
 - step5: yarn start
 - （可选）step6: yarn storybook
 
-## 已经集成的核心技术有:
+## 技术选型:
 
 - react 核心前端框架
 - @reduxjs/toolkit redux（状态管理） 速成工具
@@ -80,6 +80,7 @@
 - react-color 颜色选择库
 - immutable 数据优化
 - puppeteer e2e 测试 (未来)
+- day.js 日期/时间处理
 
 ## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
