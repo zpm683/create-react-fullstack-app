@@ -8,8 +8,10 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import { useTranslation } from "react-i18next";
-import { ERR_PAGE_KEYS as KEYS } from "../../common/i18n";
-import { useGoRootPage } from "../middlewares/customHooks";
+import { ERR_PAGE_KEYS as KEYS } from "../../@common/i18n";
+import { useNextPage } from "../../@common/middlewares";
+import { useDispatch } from "react-redux";
+import { cleanToken } from "../../login";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,7 +25,8 @@ const useStyles = makeStyles((theme: Theme) =>
 export const SevierErr500 = () => {
   const classes = useStyles();
   const { t } = useTranslation();
-  const goRootPage = useGoRootPage();
+  const nextPage = useNextPage();
+  const dispatch = useDispatch();
 
   return (
     <Paper className={classes.root}>
@@ -32,7 +35,8 @@ export const SevierErr500 = () => {
       <Link
         component="p"
         onClick={() => {
-          goRootPage();
+          dispatch(cleanToken());
+          nextPage("ROOT");
         }}
       >
         {t(KEYS.GO_TO_ROOT)}

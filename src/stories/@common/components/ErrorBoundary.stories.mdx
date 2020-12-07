@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+
+<Meta title="@common/components/ErrorBoundary" />
+
+# ErrorBoundary
+
+### これは何ですか？↓
+
+---
+
+过去，组件内的 JavaScript 错误会导致 React 的内部状态被破坏，  
+并且在下一次渲染时 产生 可能无法追踪的 错误。  
+这些错误基本上是由较早的其他代码（非 React 组件代码）错误引起的，  
+但 React 并没有提供一种在组件中优雅处理这些错误的方式，也无法从错误中恢复。  
+部分 UI 的 JavaScript 错误不应该导致整个应用崩溃，为了解决这个问题，React 16 引入了一个新的概念 —— 错误边界。
+
+错误边界是一种 React 组件，这种组件可以捕获并打印发生在其子组件树任何位置的 JavaScript 错误，  
+并且，它会渲染出备用 UI，而不是渲染那些崩溃了的子组件树。  
+错误边界在渲染期间、生命周期方法和整个组件树的构造函数中捕获错误。
+
+---
+
+かつて、コンポーネント内で発生した JavaScript エラーは React の内部状態を  
+破壊し、以降のレンダーで不可解な エラーを 引き起こしていました。このよ  
+うなエラーはアプリケーションコード中のどこか前の段階で発生したエラーに  
+よって引き起こされますが、React はエラーをコンポーネント内で適切に処理  
+する方法を提供していなかったため回復できませんでした。
+
+error boundary とは  
+UI の一部に JavaScript エラーがあってもアプリ全体が壊れてはいけません。  
+React ユーザがこの問題に対応できるように、  
+React 16 では “error boundary” という新しい概念を導入しました。
+
+### ↓ 了解更多
+
+#### [TO Learn! 中文](https://react.docschina.org/docs/error-boundaries.html)
+
+### ↓ ここでご参照お願いいたします。
+
+#### [TO Learn! 日本語](https://ja.reactjs.org/docs/error-boundaries.html)

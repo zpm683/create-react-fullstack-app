@@ -5,7 +5,7 @@
 
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { APP_PATHS } from "./common/config";
+import { APP_PATHS } from "./@common/config";
 
 // TODO: import component
 import { Login } from "./login";

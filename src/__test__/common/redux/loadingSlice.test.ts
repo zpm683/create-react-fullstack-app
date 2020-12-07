@@ -7,8 +7,8 @@ import loadingReducer, {
   selectLoading,
   setErrMsg,
   setIsLoading,
-} from "../../../app/common/redux/loadingSlice";
-import { LoadingState } from "common.params.loading";
+} from "../../../app/@common/redux/loadingSlice";
+import { LoadingState } from "@common.params";
 import { RootState } from "../../../app/store";
 
 describe("loadingSlice.ts unit test", () => {

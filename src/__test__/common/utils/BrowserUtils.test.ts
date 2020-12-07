@@ -2,7 +2,7 @@
  * BrowserUtils.ts unit test
  *
  */
-import * as BrowserUtils from "../../../app/common/utils/browserUtils";
+import * as BrowserUtils from "../../../app/@common/utils/browserUtils";
 
 describe("BrowserUtils.ts unit test", () => {
   it("Case BrowserUtils static method", () => {

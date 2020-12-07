@@ -6,7 +6,7 @@ import { LoginPanel } from "./LoginPanel";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import { useTranslation } from "react-i18next";
-import { LOGIN_KEYS as KEYS } from "../../common/i18n";
+import { LOGIN_KEYS as KEYS } from "../../@common/i18n";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

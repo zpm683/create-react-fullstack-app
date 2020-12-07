@@ -2,7 +2,7 @@
  * i18n unit test
  *
  */
-import { LOGIN_KEYS, ERR_PAGE_KEYS } from "../../../app/common/i18n/keys";
+import { LOGIN_KEYS, ERR_PAGE_KEYS } from "../../../app/@common/i18n/keys";
 
 describe("i18n unit test", () => {
   it("check LOGIN_KEYS ", () => {

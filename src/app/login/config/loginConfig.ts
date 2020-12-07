@@ -1,4 +1,4 @@
-import { APP_PATHS } from "../../common/config";
+import { APP_PATHS } from "../../@common/config";
 
 /**
  * when login succeed,

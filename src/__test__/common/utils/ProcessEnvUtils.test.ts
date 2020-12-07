@@ -2,7 +2,7 @@
  * ProcessEnvUtils.ts unit test
  *
  */
-import * as ProcessEnvUtils from "../../../app/common/utils/processEnvUtils";
+import * as ProcessEnvUtils from "../../../app/@common/utils/processEnvUtils";
 
 describe("ProcessEnvUtils.ts unit test", () => {
   it("Case get NODE_ENV", () => {

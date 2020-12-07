@@ -2,7 +2,7 @@
  * withLoading.ts unit test
  *
  */
-import { withLoading } from "../../../app/common/middlewares/thunks/withLoading";
+import { withLoading } from "../../../app/@common/middlewares/thunks/withLoading";
 import { AppThunk } from "../../../app/store";
 type AppThunkDispatch = Parameters<AppThunk>[0];
 type AppThunkStore = Parameters<AppThunk>[1];

@@ -8,7 +8,7 @@ import {
   fireEvent,
   waitForElementToBeRemoved,
 } from "@testing-library/react";
-import { LoadingShower } from "../../../app/common/components/LoadingShower";
+import { LoadingShower } from "../../../app/@common/components/LoadingShower";
 import { useSelector, useOnline } from "../../_utils/morkFunc";
 
 describe("LoadingShower.tsx unit test.", () => {

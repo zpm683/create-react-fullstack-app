@@ -4,7 +4,7 @@
  */
 import { fireEvent } from "@testing-library/react";
 import { renderHook, act } from "@testing-library/react-hooks";
-import { useOnline } from "../../../../app/common/middlewares/hooks/useOnline";
+import { useOnline } from "../../../../app/@common/middlewares/hooks/useOnline";
 
 describe("customHooks.ts unit test", () => {
   it("Case useOnline", () => {

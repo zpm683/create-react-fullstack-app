@@ -7,9 +7,11 @@ import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-import { ERR_PAGE_KEYS as KEYS } from "../../common/i18n";
+import { ERR_PAGE_KEYS as KEYS } from "../../@common/i18n";
 import { useTranslation } from "react-i18next";
-import { useGoRootPage } from "../middlewares/customHooks";
+import { useNextPage } from "../../@common/middlewares";
+import { cleanToken } from "../../login";
+import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,7 +24,8 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 export const NotFound404 = () => {
   const classes = useStyles();
-  const goRootPage = useGoRootPage();
+  const nextPage = useNextPage();
+  const dispatch = useDispatch();
   const { t } = useTranslation();
 
   return (
@@ -34,7 +37,8 @@ export const NotFound404 = () => {
       <Link
         component="p"
         onClick={() => {
-          goRootPage();
+          dispatch(cleanToken());
+          nextPage("ROOT");
         }}
       >
         {t(KEYS.GO_TO_ROOT)}

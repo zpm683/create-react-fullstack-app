@@ -7,7 +7,7 @@ import {
   fomartString,
   fomartStringToBool,
   fomartStringToNumber,
-} from "../../../app/common/utils/dataUtils";
+} from "../../../app/@common/utils/dataUtils";
 
 describe("dataUtils.ts unit test", () => {
   it("check isEmptyObject", () => {

@@ -95,7 +95,7 @@ const Xxxxxx = React.lazy(() => import('../../../Xxxxxx'));
 
 ##### 其他规约
 
-- common 内的组件必须在 storybook 中展示以便其他人快速了解公共的组件
+- @common 内的组件必须在 storybook 中展示以便其他人快速了解公共的组件
 - 在当前包中导入其他功能包中的对象时，必须从它最外层的 index.ts(导出管理)中导入  
   其他包内并不是所有带有 export 的对象都希望在外部被调用（这也是 index.ts 导出管理文件存在的意义）
 
@@ -111,7 +111,7 @@ import { loginActions } from "../../../login/src/redux/loginSlice";
 - index.ts(导出管理)中根组件应该默认导出
 - 组件中有复杂的条件渲染时，应该抽出为一个渲染方法: function renderXxxxx(){}
 - 导入包时，使用相对路径而不是绝对路径
-- 每一个需要使用路由的组件，都应该在 common-->config-->AppPaths.ts 中列举
+- 每一个需要使用路由的组件，都应该在 @common-->config-->AppPaths.ts 中列举
 - 写好注解，尤其是接口
 - 尽可能使用 ES6+的语法处理数据
 - 由于使用了 RTK，Redux 包下只能出现 xxxxSlice.ts 文件

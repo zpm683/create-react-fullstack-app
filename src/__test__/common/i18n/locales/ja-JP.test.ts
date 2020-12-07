@@ -2,7 +2,7 @@
  * i18n unit test
  *
  */
-import ja from "../../../../app/common/i18n/locales/ja-JP";
+import ja from "../../../../app/@common/i18n/locales/ja-JP";
 
 describe("i18n unit test", () => {
   it("check japanese locales", () => {

@@ -1,0 +1,69 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="@common/components/LoadingShower" />
+
+# LoadingShower
+
+### これは何ですか？↓
+
+---
+
+### 一个全局显示加载状态的组件。
+
+它会根据 redux 管理的状态显示加载过程控件，  
+并且执行异步方法时，若出现了错误，会自动的弹出错误信息，并更新 redux 管理的错误对象。  
+默认已经挂载到了根节点，无需二次导入。  
+本组件有两种更新模式，一种自动模式，一种手动模式。
+
+---
+
+#### 如何使用自动模式？
+
+使用 @common/middlewares/thuks/中的 withLoading 方法，  
+ 使用该方法的异步函数可以直接获得“转圈”的能力！  
+详情点击。
+[withLoading]()
+
+#### 如何使用手动模式？
+
+通过调用 @common/redux/loadingSlice 所提供的 3 种 action：
+
+1. setErrMsg 设置错误 MSG
+2. cleanErrMsg 清空 MSG
+3. setIsLoading 设置加载状态
+   来调控 LoadingShower 组件的渲染过程。
+
+```typescript
+import { setErrMsg, cleanErrMsg, setIsLoading } from "@common/redux";
+const Demo = () => {
+  const dispatch = useDispatch();
+  //...
+  dispatch(setErrMsg);
+  //...
+  dispatch(cleanErrMsg);
+  //...
+  dispatch(setIsLoading);
+  return <Xxxx />;
+};
+```
+
+#### 如何使用手动模式？并且重新设计一个加载组件？
+
+目前需要在你的组件中自己实现一个加载组件。  
+ 然后通过调用 @common/redux/loadingSlice 所提供的  
+ selectLoading 状态选择器获取 loading 状态。
+
+```typescript
+import { selectLoading } from "@common/redux";
+const Demo = () => {
+  const loading = useSelector(selectLoading);
+  //...
+  if (loading) {
+    // TODO
+    return <Xxx />;
+  } else {
+    // TODO
+    return <Zzz />;
+  }
+};
+```

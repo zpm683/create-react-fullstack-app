@@ -2,7 +2,7 @@
  * APP_PATHS.ts unit test
  *
  */
-import { APP_PATHS } from "../../../app/common/config/APP_PATHS";
+import { APP_PATHS } from "../../../app/@common/config/APP_PATHS";
 const ROOT_PATH = APP_PATHS.ROOT;
 
 describe("APP_PATHS.ts unit test", () => {

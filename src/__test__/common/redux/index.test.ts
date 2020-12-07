@@ -8,7 +8,7 @@ import {
   selectLoading,
   setErrMsg,
   setIsLoading,
-} from "../../../app/common/redux";
+} from "../../../app/@common/redux";
 
 describe("common/redux/index.ts unit test", () => {
   it("Case commonReducer", () => {

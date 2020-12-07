@@ -12,7 +12,7 @@ import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken, selectLoginInfo, doLoginApi } from "../redux/loginSlice";
 import { useTranslation } from "react-i18next";
-import { LOGIN_KEYS as KEYS } from "../../common/i18n";
+import { LOGIN_KEYS as KEYS } from "../../@common/i18n";
 import { theNextPage } from "../config/loginConfig";
 
 const useStyles = makeStyles((theme: Theme) =>

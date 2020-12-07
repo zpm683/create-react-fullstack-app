@@ -2,7 +2,7 @@
  * functionUtils.ts unit test
  *
  */
-import { wait, getUUID } from "../../../app/common/utils/functionUtils";
+import { wait, getUUID } from "../../../app/@common/utils/functionUtils";
 
 describe("functionUtils.ts unit test", () => {
   it("Case wait", async () => {

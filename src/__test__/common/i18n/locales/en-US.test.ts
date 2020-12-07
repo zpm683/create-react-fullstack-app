@@ -2,7 +2,7 @@
  * i18n unit test
  *
  */
-import en from "../../../../app/common/i18n/locales/en-US";
+import en from "../../../../app/@common/i18n/locales/en-US";
 
 describe("i18n unit test", () => {
   it("check english locales", () => {

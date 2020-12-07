@@ -1,0 +1,170 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="@common/middlewares/hooks" />
+
+## 自定义 hooks 文件夹
+
+- 导出了 React 社区库 use-hooks 的部分常用 Hooks
+- 自定义 Hooks
+
+---
+
+### useOnline
+
+智能在线/离线侦测  
+在需要的地方使用，作为组件在线/离线渲染的依据
+
+#### 使用方法
+
+```typescript
+const Demo = () => {
+  const isOnline = useOnline();
+
+  useEffect(() => {
+    if (!isOnline) {
+      // TODO when offline
+    } else {
+      // TODO when online
+    }
+  }, [isOnline]);
+};
+```
+
+---
+
+### useWhyDidYouUpdate
+
+在开发过程中辅助你判断组件为什么被重新渲染了
+结果会打印在控制台上
+
+#### 使用方法
+
+```typescript
+const Demo = (props) => {
+  const [state, setstate] = useState(initialState);
+  // 第一个参数是组件标识，第二个参数是一个对象可以指定监听一些props和state
+  useWhyDidYouUpdate("Demo", { ...props, state });
+  // ...
+};
+```
+
+---
+
+### usePersistFn
+
+缓存一个方法  
+特别适合当一个方法需要大量资源（时间/CPU/内存）去初始化  
+且后续该方法不会再发生变化时
+
+#### 使用方法
+
+```typescript
+const makeSomeData = () => {
+  // 耗时巨大
+};
+
+const Demo = (props) => {
+  // makeDataFN只会被实例化一次
+  const makeDataFN = usePersistFn(makeSomeData);
+
+  useEffect(() => {
+    if (reMake) {
+      makeDataFN();
+    }
+  }, [props.reMake]);
+  // ...
+};
+```
+
+---
+
+### useTextSelection
+
+获得当前鼠标选中的文本内容
+
+#### 使用方法
+
+```typescript
+const Demo = () => {
+  const ref = useRef();
+  // selection的内容就是你选中的文本
+  const selection = useTextSelection(ref); // a b
+
+  // 假设页面渲染后用鼠标选中了a b
+  return (
+    <div ref={ref}>
+      <p>a b c</p>
+    </div>
+  );
+  // ...
+};
+```
+
+---
+
+### 套件:withRefFC, useHandlerRef
+
+当你需要在父组件中操控子组件时，你就可以考虑使用它们  
+但是要注意的是不要滥用。如果简单的 props 传递则不需要。
+如果要传递 ref，才使用这组套件。
+
+参考: [refs 转发](https://react.docschina.org/docs/forwarding-refs.html)
+
+#### 使用方法
+
+- 子组件(暴露侧)
+
+```typescript
+// 定义你要暴露的内容的接口
+export type Handler = {
+  hello: () => void;
+};
+
+// 使用withRefFC,参数是固定的
+// 无props withRefFC<Handler>
+// 有props withRefFC<Handler, PropsType>
+export const Child = withRefFC<Handler>((ref, props) => {
+  const [text, setText] = useState("");
+
+  // 使用useImperativeHandle约束你要暴露的内容
+  useImperativeHandle(
+    ref,
+    () => ({
+      hello: () => {
+        alert(`Hello ${text}!`);
+      },
+    }),
+    [text],
+  );
+
+  return (
+    <input
+      type="text"
+      value={text}
+      onChange={(e) => {
+        setText(e.target.value);
+      }}
+    />
+  );
+});
+```
+
+- 父组件(调用侧)
+
+```typescript
+import { Handler, Child } from "子组件";
+export const Parent: FC = () => {
+  const handlerRef = useHandlerRef<Handler>();
+  const onClick = () => {
+    handlerRef.current?.hello();
+  };
+  return (
+    <div>
+      <Child ref={handlerRef} />
+      <button onClick={onClick}>クリック！</button>
+    </div>
+  );
+};
+```
+
+---

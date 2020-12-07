@@ -2,7 +2,7 @@
  * i18n unit test
  *
  */
-import cn from "../../../../app/common/i18n/locales/zh-CN";
+import cn from "../../../../app/@common/i18n/locales/zh-CN";
 
 describe("i18n unit test", () => {
   it("check chinese locales", () => {
