@@ -52,7 +52,7 @@ export const doLoginApi = (params: RequestData): AppThunk =>
       console.log(`result${JSON.stringify(result)}`);
       dispatch(setToken(result.token));
     },
-    (dispatch, getState) => {
-      console.log(getState().common.loading.errMsg);
+    (err, dispatch, getState) => {
+      console.log(err);
     },
   );

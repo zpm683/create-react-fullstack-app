@@ -35,6 +35,7 @@ export function withLoading<T>(
     getStates: AppThunkStore,
   ) => void = () => {},
   onFailure: (
+    error: any,
     dispatch: AppThunkDispatch,
     getStates: AppThunkStore,
   ) => void = () => {},
@@ -48,11 +49,11 @@ export function withLoading<T>(
       if (result) {
         onSuccess(result, dispatch, getState);
       } else {
-        onFailure(dispatch, getState);
+        onFailure("result is null", dispatch, getState);
         dispatch(setErrMsg("result Err"));
       }
     } catch (error) {
-      onFailure(dispatch, getState);
+      onFailure(error, dispatch, getState);
       dispatch(setErrMsg(JSON.stringify(error)));
     }
   };
