@@ -1,3 +1,7 @@
 {
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "trailing",
+  "workbench.colorCustomizations": {
+    "editorWhitespace.foreground": "#fbff00"
+  }
 }
