@@ -9,8 +9,8 @@ interface ILoginStoreState {
 
 const initialState: ILoginStoreState = {
   loginInfo: {
-    password: "",
-    userId: "",
+    password: "123",
+    userId: "zpm",
   },
   token: "",
 };

@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, KeyboardEvent } from "react";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -10,7 +10,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import IMG_LOGO from "../../assets/img/logo.png";
 import { useTranslation } from "react-i18next";
 import { LOGIN_KEYS as KEYS } from "../../../@common/i18n";
-import { LoginInfo } from "login.params";
+import { LoginPanelViewModel } from "./LoginPanel.viewmodel";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,35 +30,20 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 type LoginPanelProps = {
-  loginInfo: LoginInfo;
-  onLogin: () => void;
+  viewModel: LoginPanelViewModel;
+  onClickLoginBtn: () => void;
+  onKeyPressLoginBtn?: (event: KeyboardEvent<HTMLButtonElement>) => void;
+  onKeyPressTextField?: (event: KeyboardEvent<HTMLDivElement>) => void;
 };
-export const LoginPanel: FC<LoginPanelProps> = ({ loginInfo, onLogin }) => {
+
+export const LoginPanel: FC<LoginPanelProps> = ({
+  viewModel,
+  onKeyPressLoginBtn,
+  onClickLoginBtn,
+  onKeyPressTextField,
+}) => {
   const classes = useStyles();
   const { t } = useTranslation();
-  const [userId, changeUserId] = useState(loginInfo.userId);
-  const [password, changePassword] = useState(loginInfo.password);
-
-  function inputChecker() {
-    if (userId.length !== 0 && password.length !== 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  function doLogin() {
-    if (inputChecker()) {
-      onLogin();
-    } else {
-      alert("plase input ID && PASS");
-    }
-  }
-
-  function doEnter(keyCode: number) {
-    if (keyCode !== 13) return;
-    doLogin();
-  }
 
   return (
     <>
@@ -75,9 +60,8 @@ export const LoginPanel: FC<LoginPanelProps> = ({ loginInfo, onLogin }) => {
             className={classes.textField}
             label={t(KEYS.USER_NAME)}
             variant="outlined"
-            value={userId}
-            onChange={(e) => changeUserId(e.target.value)}
-            onKeyPress={(e) => doEnter(e.which)}
+            defaultValue={viewModel.userId}
+            onKeyPress={onKeyPressTextField}
           />
           <br />
           <br />
@@ -86,9 +70,8 @@ export const LoginPanel: FC<LoginPanelProps> = ({ loginInfo, onLogin }) => {
             className={classes.textField}
             label={t(KEYS.PASSWORD)}
             variant="outlined"
-            value={password}
-            onChange={(e) => changePassword(e.target.value)}
-            onKeyPress={(e) => doEnter(e.which)}
+            defaultValue={viewModel.password}
+            onKeyPress={onKeyPressTextField}
           />
         </CardContent>
         <CardContent>
@@ -119,8 +102,8 @@ export const LoginPanel: FC<LoginPanelProps> = ({ loginInfo, onLogin }) => {
             size="large"
             variant="contained"
             color="primary"
-            onClick={doLogin}
-            onKeyPress={(e) => doEnter(e.which)}
+            onClick={onClickLoginBtn}
+            onKeyPress={onKeyPressLoginBtn}
           >
             {t(KEYS.LOGIN)}
           </Button>
