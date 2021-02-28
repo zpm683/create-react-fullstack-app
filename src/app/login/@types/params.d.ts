@@ -1,5 +1,5 @@
 /**
- * login パラメーター定義
+ * login common type
  */
 declare module "login.params" {
   export type UserId = string;

@@ -1,6 +1,5 @@
-// import { apiClient } from "../../../@common";
-import { RequestData, ResponseData } from "login.api.loginApi";
-import { wait } from "../../@common/utils";
+import { RequestData, ResponseData } from "login.models.DoLogin";
+import { wait } from "../../../lib/utils";
 
 export async function callLoginApi(params: RequestData) {
   try {
@@ -22,6 +21,6 @@ export async function callLoginApi(params: RequestData) {
 
     return data;
   } catch (error) {
-    throw new Error(error);
+    return error;
   }
 }

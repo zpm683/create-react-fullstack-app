@@ -1,9 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState, AppThunk } from "../../store";
-import { callLoginApi } from "../api/loginApi";
+import { RootState } from "../../store";
 import { LoginInfo } from "login.params";
-import { RequestData, ResponseData } from "login.api.loginApi";
-import { withLoading } from "../../@common/middlewares";
 
 interface ILoginStoreState {
   loginInfo: LoginInfo;
@@ -42,17 +39,3 @@ export const selectToken = (state: RootState) => state.login.token;
 
 export const { cleanToken, saveLoginInfo, setToken } = loginSlice.actions;
 export const loginReducer = loginSlice.reducer;
-
-export const doLoginApi = (params: RequestData): AppThunk =>
-  withLoading<ResponseData>(
-    async (dispatch, getState) => {
-      return await callLoginApi(params);
-    },
-    (result, dispatch, getState) => {
-      console.log(`result${JSON.stringify(result)}`);
-      dispatch(setToken(result.token));
-    },
-    (err, dispatch, getState) => {
-      console.log(err);
-    },
-  );

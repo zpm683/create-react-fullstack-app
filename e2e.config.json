@@ -1,8 +1,0 @@
-{
-  "transform": {
-    ".(ts|tsx)": "ts-jest"
-  },
-  "testEnvironment": "node",
-  "testRegex": "(/e2e/.*|\\.(e2e))\\.(ts|tsx|js)$",
-  "moduleFileExtensions": ["ts", "tsx", "js"]
-}
