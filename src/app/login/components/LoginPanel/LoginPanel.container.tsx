@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { useDispatch, useSelector } from "react-redux";
 import { useNextPage } from "../../../@common/hooks";
 import { selectLoginInfo, selectToken, setToken } from "../../redux/loginSlice";
-import { LoginPanel } from "./LoginPanel.component";
+import { LoginPanel } from "./LoginPanel";
 import { callLoginApi } from "../../api/loginApi";
 
 export const LoginPanelContainer: FC = () => {
