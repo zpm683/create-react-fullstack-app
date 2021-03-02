@@ -10,20 +10,25 @@
 
 ```
 ├─.storybook　　//storybook配置
-├─.vscode　　//vscode配置
-├─public　　//静态资源包
-├─.env.development　　//开发环境专用环境变量
-├─.env.production　　//生产环境专用环境变量
-├─.env.test　　//测试环境专用环境变量
-├─.gitignore　　//git遗忘文件配置
-├─.prettierrc　　//代码风格配置
-├─.package.json　　//环境依赖
-├─README.md　　//须知
-├─tsconfig.json　　//TS配置
-├─yarn.lock　　//环境依赖版本锁
-└─src　　//默认工程源码目录
-    ├─app　　//业务源码目录
-    │  ├─@common　　//公共目录
+├─.vscode　　// VSCode配置
+├─build    // 最终输出
+├─coverage // 测试覆盖率报告
+├─public　　// React相关静态资源
+├─node_modules // 第三方node库
+├─.env.development　// 开发环境专用环境变量（npm run start时）
+├─.env.production　// 生产环境专用环境变量（npm run build时）
+├─.env.test　// 测试环境专用环境变量（npm run test时）
+├─.eslintcache // eslint缓存文件
+├─.gitignore // git遗忘目录
+├─.prettierrc // 代码风格设置
+├─e2e.config.json // 端对端测试配置
+├─package-lock.json // 工程配置锁
+├─package.json // 工程配置
+├─README.md // 注意事项
+├─tsconfig.json // TS编译设置
+└─src　　//CRA默认源码目录
+    ├─app　　//业务文件夹
+    │  ├─common　　//公共目录 (可以抽离为独立的外部依赖)
     │  │  ├─@types　　//公共接口定义
     │  │  ├─assets　　//公共资源文件
     │  │  │  ├─doc
@@ -34,18 +39,28 @@
     │  │  ├─hooks　　//公共Hooks
     │  │  ├─i18n　　//国际化
     │  │  │  └─locales
-    │  │  ├─middlewares　　//中间件
+    │  │  ├─service　　// service
     │  │  └─utils　　//工具集
-    │  ├─login　　//具体业务（Demo）
+    │  ├─Xxxxx　　//具体业务（Demo）
     │  │  ├─@types　　//具体业务接口定义
+    │  │  │  └─models // view-models定义
     │  │  ├─assets　　//该业务所需资源
     │  │  │  └─img
-    │  │  ├─components　　//该业务组件
-    │  │  ├─config　　//该业务配置项
-    │  │  ├─redux　　//该业务redux（RTK）
-    │  │  ├─api　　//api
-    │  │  └─tools　　//纯数据处理工具
-    ├─stories　　//工程storybook目录
+    │  │  ├─components   //该业务组件UI层
+    │  │  │  └─Xxxxx.view.tsx  // Xxxxx组件视图层
+    │  │  │  └─Xxxxx.viewmodel.ts  // Xxxxx组件数据&事件处理层
+    │  │  │  └─Xxxxx.container.tsx  // Xxxxx组件数据连接包装器
+    │  │  ├─config　 // 该业务配置项
+    │  │  ├─redux   // 该业务状態管理(RTK)
+    │  │  ├─apollo　 // 该业务的graphql处理
+    │  │  ├─tools　　//纯数据处理工具
+    │  │  └─index.ts    //　导入导出管理
+    │  ├─index.tsx　　// 根组件
+    │  ├─react-app-env.d.ts　　// react环境类型定义文件
+    │  ├─serviceWorker.ts　　// PWA驱动
+    │  ├─setupTests.ts　　// 测试环境配置
+    ├─stories　　//storybook工程目录
+    ├─lib　　// 自定义React通用库
     ├─e2e　　//端对端测试目录
     └─__tests__　　//单元测试目录
 
